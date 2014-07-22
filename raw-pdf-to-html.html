@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="markel.js"></script>
+</head>
+<body>
+
+  <div data-markdown>
+
+_Ville Vanninen_
+
+#Gridlover
+
+## Vertikaalinen rytmi ja modulaarinen skaala web-typografiassa
+
+Ville Vanninen<br>
+Opinnäytetyö<br>
+Kevät 2014<br>
+Kuvallinen viestintä<br>
+Oulun ammattikorkeakoulu<br>
+Työn ohjaaja: Tuukka Uusitalo<br>
+Kiitokset: Heli, Veikko, Karo, Kati
+
+
+## Tiivistelmä
+
+Tutkielmani käsittelee web-typografian järjestelmällistä rakentamista ja
+tarkastelee siitä erityisesti pystysuuntaisten mittojen valitsemista ja laskemista.
+Opinnäytetyön tuotannollinen osio oli toteuttamani typografiasovellus -
+Gridlover. Sovellus tuottaa järjestelmällistä typografiaa, mutta sen toimintatapaa
+ei ole dokumentoitu missään, joten näin opinnäytetyön oivana tilaisuutena
+käydä läpi miten ja miksi Gridlover toimii.
+
+Tutkielman tavoitteena on käydä läpi periaatteet joiden mukaan voi muodostaa
+vertikaalisen rytmin ja modulaarisen skaalan, sekä näyttää käytännössä miten
+ne lasketaan. Eli miten muodostaa kokonainen typografinen järjestelmä
+mainituilla periaatteilla.
+
+Käyn läpi typografien periaatteita, selainteknologiaa ja Gridloverin toimintaa
+web-alan artikkelien, spesifikaatioiden, sekä omien web-design kokemusteni
+pohjalta. Tutkielma on siis case-tutkimus Gridlover sovelluksesta.
+
+Sovellan itse tutkielmaani Gridloverin jatkokehitykseen. Kaikkia selvitettyjä
+periaatteita ei ole toteutettu sovelluksessa yhtä perusteellisesti kuin
+tutkielmassa ilmaistaan. Tutkielmaa voi siis soveltaa web-typografian
+syvempään ymmärtämiseen, tai jopa oman typografiasovelluksen
+kehittämiseen.
+
+Asiasanat:<br>
+Typografia, web design, css, www-sivut
+
+<img src="file:///page3image10984" alt="page3image10984" width="428.400000" height="0.480000">
+<img src="file:///page3image11144" alt="page3image11144" width="428.400000" height="0.480000">
+<img src="file:///page3image11304" alt="page3image11304" width="428.400000" height="0.480000">
+
+  </div>
+
+    <div class="page" title="Page 3">
+
+    </div>
+    <div class="page" title="Page 4">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'Arial'; font-weight: 700">Abstract
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">Oulu University of Applied Sciences
+Communications, Visual Communications
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">Author: Ville Vanninen<br>
+Title of thesis: Gridlover: Vertical rhtythm and modular scale in web typography
+Supervisor: Tuukka Uusitalo<br>
+Term and year when thesis was submitted: Spring 2014<br>
+Number of pages: 43
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">My thesis examines building a typographic system for use in web projects,
+especially how to choose and calculate vertical measurements. The production
+related to my thesis was a typographic web application I made - Gridlover. The
+application produces systematic typography, but the way it works is not
+documented anywhere, so I saw my thesis as an ample opporutunity to go
+through how and why Gridlover works.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">The purpose of this study is to go through the principles of forming vertical
+rhythm and modular scale, and show how to calculate them in practice. That is,
+how to form a complete typographic system with the aformentioned principles.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">I will go through typographic principles, browser technology and the way
+Gridlover works, by referencing articles, specifications and my own experiences
+as a web designer. The study is a case study on Gridlover.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">I will apply my findings in further developing Gridlover. Some of the principles in
+the study are not implemented in the application as thoroughly as they are
+explained. The study can be used for deeper understanding of web typography,
+or even as base knowlegde for developing a new typographic application.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">Keywords:<br>
+Typography, web design, css, web-sites
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page4image13552" alt="page4image13552" width="428.400000" height="0.480000">
+      <img src="file:///page4image13712" alt="page4image13712" width="428.400000" height="0.480000">
+      <img src="file:///page4image13872" alt="page4image13872" width="428.400000" height="0.480000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">4
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 5">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'Arial'; font-weight: 700">Sisällys
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">1 Johdanto 6
+2 Typografia 9
+2.1 Design järjestelmä 10
+2.2 Modulaarinen skaala 12
+2.3 Kirjasintyypit 13
+2.4 Vertikaalinen rytmi 13
+3 Teknologia 16
+3.1 HTML 17
+3.2 Markdown 17
+3.3 CSS (Cascading Style Sheets) 19
+3.4 Mittayksiköt 21
+4 Käyttöliittymä 24
+5 Laskenta 28
+5.1 Skaala 29
+5.2 Rytmi 30
+5.3 Marginaalit 32
+6 Ongelmia ja ratkaisuja 34
+6.1 Luhistuvat marginaalit 35
+6.2 Jalkalinjan tasaus rytmiin 35
+6.3 Rivikorkeuteen vaikuttavat elementit 36
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">7 Pohdinta
+8 Sanasto
+Lähteet
+</span></p>
+        </div>
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'ArialMT'">39
+40
+43
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">5
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 6">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">1 Johdanto
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">“Perfect typography is certainly the most elusive of all arts. Sculpture in stone alone
+comes near it in obstinacy.” (Thompson, 1969)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Jan Tschichold toteaa kirjassa Homage to the Book typografian olevan varmuudella
+vaikein taiteen laji, vain kiven veistäminen on lähellä sen itsepintaisuutta. Juuri tästä
+syystä täydellisen typografisen järjestelmän kehittäminen on kiehtonut minua niin
+pitkään kuin olen tiennyt mitä typografinen järjestelmä tarkoittaa. Tiedän että
+täydellisyyttä ei voi etenkään tällä taiteen alalla saavuttaa, mutta sitä kohti voi kuitenkin
+pyrkiä.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Lähdin opinnäytetyönäni toteuttamaan web-sovellusta joka tuottaa kolmea muuttujaa
+muuttamalla automaattista, säännönmukaista typografisesti järjestelmällistä CSS-
+koodia, jota voi muokata ja soveltaa oman typografisen järjestelmänsä rakentamiseen
+web-sivustoja suunnitellessa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridlover tuottaa valmista CSS-koodia joka mahdollistaa pikselintarkan typografian
+web-selaimissa käyttäen modulaarista skaalaa ja vertikaalista rytmiä. Näitä on
+mahdollista laskea myös käsin, mutta se on erittäin työlästä ja jää helposti projekteissa
+budjetin jalkoihin, kun on keskityttävä suuremmalla prioriteetilla oleviin projektin osa-
+alueisiin. Gridloverin olemassaolon tarkoitus on mahdollistaa typografisen järjestelmän
+suora muokkaus siten, että lopullinen koodi ja sen tuottama visuaalinen lopputulos on
+nähtävissä välittömästi lähtöasetelmia muutettaessa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Projekti lähti liikkeelle kun ystäväni Tuomas Jomppanen ehdotti ideaa vertikaalista
+rytmiä ja modulaarista skaalaa visualisoivasta sovelluksesta. Hän teki idean pohjalta
+ensimmäisen prototyypin. Innostuin heti työkalusta joka voisi nopeuttaa tarkan
+typografian luomista uusiin web-projekteihin. Näin että työkalusta olisi hyötyä sekä
+itselle työnteossa sekä muille typografiaa tuottaville web-designereille. Ensimmäisen
+version matematiikka oli hyvin naiivia typografian suhteen: fonttikoot laskettiin vain
+lineaarisella skaalalla, eli määrittämällä numero, joka lisätään kunkin otsikkotason
+fonttikokoon kun mennään otsikkotasossa suuremmaksi. Kun aloin miettimään
+matematiikkaa tarkemmin, oivalsin kuinka syvää ymmärrystä selainten toiminnasta ja
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">6
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 7">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">typografiasta sovelluksen tekeminen vaatisi. Pian ensimmäisen prototyypin valmistuttua
+toteutin itse alusta asti uuden version Gridloverista ja otin kehityksen omalle
+vastuulleni.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridlover on toteutettu yleisillä web-tekniikoilla: HTML, CSS ja Javascript.
+Pääasiallinen kehitystyökalu on ollut tekstieditori koodin tuottamiseen ja Photoshop
+käyttöliittymäsuunnitteluun. Tässä tutkielmassa käyn läpi tämän hetkisten web-selainten
+ongelmia tarkan typografian tekemisessä ja sitä miten ja mitä ongelmia Gridlover
+kehitettiin ratkaisemaan.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tutkimusmenetelmänä on tapaustutkimus, jonka kohteena on tuottamani
+typografiasovellus - Gridlover. Tutkimuksen teorialähteet ovat pääasiassa artikkeleita
+pitkään web-alaan vaikuttaneilta henkilöiltä. Lyhyet blogiartikkelit voivat vaikuttaa
+ensiajatuksena kevyeltä lähdemateriaalilta painettuihin kirjoihin verrattuna, mutta koska
+tutkielma käsittelee nimenomaan web-typografiaa, on varsin aiheeseen sopivaa että
+lähdemateriaalina on artikkeleita jotka kertovat web-typografiasta, sekä toteuttavat sitä
+käytännössä ilmeellään ja tyylitiedostoillaan. Web-ala liikkuu eteenpäin niin nopeaan
+tahtiin, että viisi vuotta sitten painettu kirja, jossa viitataan web-teknologioihin, voi
+sisältää jo vanhentunutta tietoa. Etenkin koska viimeisen viiden vuoden sisällä web-
+fontit ja web-typografia on ollut hyvin nopean kehityksen alla, verrattuna sitä
+aikaisempaan kehitykseen jolloin tapahtui enemmän kehitystä muilla selainteknologian
+osa-alueilla. Webissä julkaistuihin artikkeleihin myöskin ilmestyy korjauksia ja
+laajennuksia sitä mukaa kun niitä koskevat faktat muuttuvat, joten senkin jälkeen kun
+tämä työ on valmistunut, vaikka työssä itsessään olisi vanhentunutta tietoa, lähteistä voi
+löytyä päivitettyä tietoa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tutkielman teoreettinen viitekehys pohjautuu typografiakirjallisuuteen, web-
+standardeihin ja määrittelyihin sekä omaan pitkään kokemukseeni web-ammattilaisena.
+Tarkastelen Gridloveria ja kirjallisuutta web-suunnittelun ja typografian perusteet
+osaavan web-designerin näkökulmasta, jotta tutkielman ymmärtäminen ei vaatisi
+etukäteen syvää ymmärrystä käsitellyistä asioista. Termistö ja tutkimus on enemmän
+teknistä kuin estetiikkaan liittyvää.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">7
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 8">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tärkeimpänä lähteenä käytän A List Apart, 24 ways julkaisujen artikkeleita web-
+typografiasta, sekä W3C spesifikaatioita web-teknologioille. A List Apart on alan
+arvostetuimpia, ellei arvostetuin julkaisu, johon alan tunnetuimmat henkilöt kirjoittavat
+tekstejä jaksottaisesti. Se on myös yksi pitkäikäisimmistä web-designia koskevista
+julkaisuista joita on olemassa. 24 ways on myös pitkäikäinen, joka joulukuussa 24
+artikkelia, yhden päivässä, julkaiseva sivusto. W3C tuottaa spesifikaatioita, joiden
+mukaan selaimet toteuttavat ominaisuuksia, sekä vastavuoroisesti muokkaavat
+spesifikaatioita sen mukaan, mitä ominaisuuksia selaimet toteuttavat.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tutkielman tarkoituksena on koota tietopaketti web-typografian teknisiin perusteisiin
+vaikuttavista seikoista Gridloveria tutkien ja lopulta vastata kysymykseen “Kuinka
+tuottaa pikselintarkka vertikaalinen rytmi ja skaala CSS:llä”. Pikselintarkka tarkoittaa
+tässä yhteydessä sitä, että jokainen mitta jota tuotetussa typografisessa järjestelmässä
+käytetään on tarkoituksella valittu ja matemaattisesti laskettu, eikä satunnaista vaihtelua
+synny. Tällöin voidaan esimerkiksi luotettavasti luoda otsikkotaso, joka on kaksi kertaa
+perus rivivälin korkuinen, vaikka lopputuloksena luvut tyylitiedostossa olisivat
+satunnaiselta näyttäviä pitkiä desimaalilukuja. Tutkimusta voi soveltaa selaimissa
+tapahtuvan typografisen suunnittelun ja sen monimuotoisuuden ymmärtämiseen, sekä
+uusien typografisia säännöstöjä tuottavien sovellusten suunnittelun lähtökohtana.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tutkielmaa lukiessa kannattaa avata Gridlover selaimeen osoitteessa
+</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://gridlover.net</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">. Kutakin kappaletta lukiessa voi käyttää sovellusta ja tarkastella sen
+toimintaa lukemaansa liittyen. Koska kyseessä on interaktiivinen sovellus, sitä ei pysty
+lisäämään tekstiliitteenä tulostettuun tutkielmaan, eikä sovellus toimi erillisenä
+tiedostona ilman web-palvelinta, joten se on avattava web-osoitteesta tai ladattava
+lähdekoodi omalle koneelle paikallisesti ajettavaksi.
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page8image11928" alt="page8image11928" width="90.240000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">8
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 9">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2 Typografia
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Typografia on kirjasinten, sanojen ja tekstin sommittelua visuaalisesti. Typografian
+tarkoitus on välittää kirjoitettua kommunikaatiota halutulla tavalla. Yleensä typografian
+määritelmään kuuluu selkeyden ja luettavuuden tavoittelu. Usein typografiaa käsitellään
+vain luettavuuden työkaluna. Typografia kuitenkin kattaa koko skaalan ihmisten välistä
+kommunikaatiota ja sitä on löydettävissä kaikista visuaalisista medioista. Typografinen
+kommunikaatio voi olla faktatiedon välittämisen lisäksi tunteellista, tai mitä tahansa
+kielellistä kommunikaatiota joka halutaan esittää visuaalisesti. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Miller 99</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, 3, hakupäivä
+4.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">“Vaikka typografia voi olla kutsumustyö, se on olennainen osa graafisen suunnittelijan
+ammattia, monet typografian työkalut ovat saatavilla lähes kaikille. Tietäväinen ja
+tunnollinen tarkkaavaisuus tarkoitukseen, muotoon ja yksityiskohtiin erottaa typografin
+pelkästään kirjasinten käyttäjästä” (sama, 3)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Typografiaa voi siis toteuttaa taiteena, piittaamatta säännöistä, mutta tehokas
+kommunikaatio perustuu historian ja sen kautta muodostuneiden sääntöjen syvään
+tuntemukseen. Typografia ei kuitenkaan ole kuin kielioppia, typografian sääntöjä ei voi
+pitää pilkuntarkkoina, vaan ne ovat enemmänkin ohjenuora, jonka pohjalta voi rakentaa
+oman tapansa kommunikoida. Tapauskohtaisen typografisen järjestelmän rakentaminen
+helpottaa typografian tuottamista.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Korostan typografian monimuotoisuutta ja historiaa selventääkseni miten tarkkaan
+rajattu tarkoitus Gridloverilla on suhteessa typografiaan yleensä. Tarkoitukseni on
+peilata Gridloverin toimintaa typografian pitkiin perinteisiin, jotta syntyisi ymmärrys
+siitä, miksi ja miten Gridloverin, sekä yleisesti selainten, typografinen kontrolli
+poikkeaa typografian perinteistä.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Toisin kuin monessa typografiaa sivumennen käsittelevässä opinnäytetyössä väitetään
+(S. Harjukelo 2013: Visuaalisen ilmeen rakentaminen, 16; H. Maatta 2011: Visuaalisen
+ilmeen ja virallisen Facebook-sivun suunnittelu ja toteutus, 12; M. Tarvainen 2011:
+Käyttäjäystävällinen blogikäyttöliittymä), kirjasimen valinta ei mielestäni ole
+yksittäinen tärkein valinta typografiaa suunnitellessa. Tekstin luettavuuteen vaikuttavat
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page9image13944" alt="page9image13944" width="44.880000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">9
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 10">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">monet seikat, eikä kirjasimen valintaa voi yksilöidä niistä tärkeimmäksi. Esimerkiksi jos
+rivit ovat pitkiä ja rivin korkeus olematon, on teksti lukukelvotonta riippumatta
+kirjasinvalinnasta. Kirjasimeen liittyvät valinnat ovat osa kokonaisen typografisen
+järjestelmän luontia. Gridlover on työkalu vain skaalan ja rytmin löytämiseksi.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tekstin luettavuus, rivin korkeus ja rivin pituus kulkevat käsi kädessä. Näiden
+muuttujien määreisiin vaikuttavat myös fontin ominaisuudet. (Bringhurst 2012, 36)
+Esimerkiksi jos fontti on leveä ja korkea, on optimaalinen rivin pituus suurempi kuin
+kapealla fontilla ja optimaalinen rivikorkeus suurempi kuin matalalla fontilla. Koska
+kirjasimen valinta usein mielletään tärkeimmäksi typografiseksi valinnaksi, sen
+tekemiseen on olemassa jo runsaasti työkaluja. Gridlover keskittyy rivin korkeuden,
+rivin pituuden ja fonttikokojen ja niiden välisten suhteiden valitsemiseen, eikä sisällä
+työkaluja kirjasimen valintaan tai kirjasinten vertailuun.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tekstin tasaus on typografisesti tärkeä valinta, mutta selaimissa sen kontrollointi on
+vielä alkeellista. Selaimissa on valittavana vasen, oikea, keskitetty ja molempiin
+reunoihin tasaus. Viimeksi mainitussa ei ole mitään yleisiä tapoja säätää tasauksen
+käyttäytymistä. Gridlover ei ota kantaa tasaukseen, enkä käsittele sitä tutkielmassa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Typografian osasia ei voi täysin erotella toisistaan, vaan typografisessa kokonaisuudessa
+on monia palasia, jotka kaikki vaikuttavat toisiinsa. Tästä syystä on tärkeää, sekä
+haastavaa, rakentaa yhtenäinen järjestelmä jota käyttää suunnittelun perustana. Vaikka
+julkaisussa olisi valittu tietty fontti käytettäväksi läpi kaikkien sivujen, jos julkaisun
+typografiassa käytetyt mitat muuttuvat paikasta toiseen, fontin sopivuus voi vaihdella.
+Tärkeintä on että typografia tukee sisältöä, siten että sisältö ja sen esittävä typografia
+ajavat samaa viestiä.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2.1 Design järjestelmä
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Design järjestelmä tarkoittaa sisällön ulkoasua suunnitellessa valintoja, joilla luodaan
+optimaalinen esitystapa sisällölle. Sen osasia voi olla kirjasin, perusyksikkö, väri,
+muoto, ruudukot, taitto, fonttikoko ja rivin pituus. Näistä osasista luodaan järjestelmä,
+jota sovelletaan suunnittelussa. Kaikilla osasilla on siis jokin suhde keskenään ja
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">10
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 11">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">järjestelmässä on jokin sisällöstä lähtöisin oleva perusyksikkö. Systemaattisella
+lähestymistavalla saadaan aikaan yhtenäinen ilme kautta linjan koko tuotteelle tai
+sivustolle jota ollaan tekemässä. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Kalbag 2012</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 6.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Olen itse pitkään käyttänyt dokumentin leipätekstin rivikorkeutta käytännöllisenä
+mittana, johon perustaa muu typografia. Tähän viitataan usein nimellä vertikaalinen
+rytmi. Valitsin Gridloverin säädettäviksi muuttujiksi fonttikoon, rivin korkeuden ja
+skaalakertoimen. Muuttujat toimivat yhdessä ja vaikuttavat toisiinsa
+esittelyjärjestyksessä.
+</span></p>
+          <ol>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Fonttikoko määrittää kirjainten koon. Fonttikoko on ensimmäinen asia joka
+vaikuttaa tekstin luettavuuteen: Liian pienellä fonttikoolla kirjaimia ei pysty
+erottelemaan toisistaan, liian suurella fonttikoolla kokonaiset sanat eivät edes
+mahdu ruudulle.
+</span></p>
+            </li>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Rivin korkeus on kerroin fonttikoolle. Rivin korkeudesta syntyy perusyksikkö
+joka toistuu kaikkialla Gridloverin avulla tuotetuissa design järjestelmissä.
+</span></p>
+            </li>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Skaala on kerroin, jonka mukaan otsikkotasojen fonttikoko määritetään.
+Kullekin otsikkotasolla voi valita skaalalta sijainnin. Fonttikoko skaalalla lähtee
+aluksi valitusta fonttikoosta ja suurenee eksponentiaalisesti valitun
+skaalakertoimen mukaan.
+</span></p>
+            </li>
+          </ol>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Käytännössä webissä typografinen järjestelmä toteutetaan kirjoittamalla tyylitiedosto,
+jossa näitä valintoja käytetään ja jonka mukaan sivuston ulkoasu määräytyy selaimessa.
+Suunnitellessa täytyy ottaa huomioon, että sivustoa saatetaan katsella millaisella
+ruudulla hyvänsä. Mahdolliset katseluympäristöt kannattaa jakaa kategorioihin ja
+muuttaa tyylejä kullekin sopivimmaksi. Kullekin katseluympäristölle kannattaa valita
+sopivin fonttikoko, rivin korkeus ja rivin pituus.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridlover ei itsessään ota kantaa katseluympäristöön, vaan toimii ympäristöstä
+riippumatta. Tällöin kullekin ympäristölle sopivat tyylit voi toteuttaa ja esikatsella
+tapauskohtaisesti, ottaa tyylit talteen ja koota itse tyylitiedostoonsa kunkin ympäristön
+erilliset tyylit. Gridloverin tuottamaa tyylitiedostoa voi käyttää oman designinsa
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page11image13232" alt="page11image13232" width="61.680000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">11
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 12">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">lähtökohtana, tai suoraan sellaisenaan, jos haluaa vain visuaalisesti löytää
+helppolukuisimmat arvot mainituille muuttujille.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2.2 Modulaarinen skaala
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Englanniksi typografisesta sivun suunnittelusta puhuttaessa käytetään usein sanaa
+compose - säveltää. Tämä liittyy siihen, miten typografisten mittojen suhteiden
+määrityksiä voi verrata musiikin säveltämiseen. Bringhurst toteaa usein siteeratussa
+kirjassaan Elements of Typographic Style: “A modular scale, like a musical scale, is a
+prearranged set of harmonious proportions.” (Bringhurst 2012, 36)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Otsikkotasojen fonttikokojen perustana Gridloverissa on modulaarinen skaala.
+Yksinkertaisimmillaan se tarkoittaa sitä, että fonttikoot lasketaan pienimmästä
+suurimpaan, kertomalla edellinen fonttikoko skaalakertoimella ja näin saadaan seuraava
+suurempi fonttikoko. Perus fonttikoosta pienemmäksi mennään jakamalla edellinen luku
+suhdeluvulla. Skaalan voi rakentaa muillakin tavoin, sen tarkoitus on jäsentää numeroita
+siten, että ne liittyvät toisiinsa jonkin merkityksellisen suhdeluvun kautta. Esimerkiksi
+kultaisen leikkauksen suhdeluku 1.618, voi olla modulaarisen skaalan perustana.
+(</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Brown 2011</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 6.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Käyttämällä historiallisesti ja kulttuurillisesti merkityksellisiä suhdelukuja skaalan
+luomiseen ja perustamalla järjestelmän arvot tähän skaalaan, voi saavuttaa visuaalisen
+harmonian, jollaista ei löydy satunnaisesti tai helpon laskettavuuden vuoksi valituilla
+arvoilla toteutetusta järjestelmästä. (sama)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Ensimmäistä kertaa Brownin artikkelin luettuani lisäsin Gridloverin käyttöliittymään
+skaalalle esivalinnat klassisten musiikillisten skaalojen mukaan. Rivin korkeus
+määritellään Gridloverissa myös suhdelukuna fontin kokoon, mutta rivin korkeudelle en
+lisännyt samoja esiasetuksia, koska rivin korkeus pyöristetään tyylitiedostoon niin
+karkeasti, että tarkat esiasetukset menettäisivät merkityksensä. Jätin kuitenkin
+mahdollisuuden syöttää numerokenttään itse niin tarkan arvon kuin haluaa.
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page12image12552" alt="page12image12552" width="59.760000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">12
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 13">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2.3 Kirjasintyypit
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kirjasintyyppien mitoissa voi olla suuriakin eroja. Mitat vaikuttavat siihen, millainen
+fonttikoko, rivikorkeus ja rivin pituus muodostaa luettavan ja silmää miellyttävän
+kokonaisuuden. Tästä syystä fonttivalintaa ja muita mittoja ei voi pitää toisistaan
+erillisinä päätöksinä, vaan ne on sovitettava toisiinsa. (Kuvio 1)
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page13image3208" alt="page13image3208" width="425.999980" height="161.917700">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 1. Keskenään hyvin eri mittasuhteilla rakennetut kirjasintyypit, jotka on ladottu
+identtisillä asetuksilla Gridloverissa. Vasemmalla Fjalla One, oikealla Cuprum.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverissa, ja selaimissa yleensä, ei pysty vaikuttamaan kirjasimen mittoihin
+muutoin kuin fonttikokoa muuttamalla, eikä kirjasimien eri osien mittoja pysty
+myöskään mittamaan. Rivivälit ja marginaalit on säädettävä kohdilleen visuaalisesti,
+siihen on vaikeaa tehdä automatiikkaa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2.4 Vertikaalinen rytmi
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Vertikaalisen rytmin tarkoituksen voi ymmärtää musiikin kautta. Ajan ja tilan voi jakaa
+määrättömän pieniin osiin. Musiikillinen harmonia perustuu ajan jakamiseen toisiinsa
+suhteessa oleviin osiin. Musiikissa on siis rytmi, jonka avulla sitä seurataan. Rytmi voi
+koostua eri mittaisista osista, tai poiketa välillä harmoniasta, mutta sen on aina
+pohjauduttava johonkin. Samaa voi soveltaa tilan jakamisessa ja typografiassa.
+Kirjaimet muodostavat vaakasuuntaisen rytmin täyttämällä valitun mittaisia rivejä.
+Pystysuunnassa rytmin perustana on riviväli. (Bringhurst 2012, 36)
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">13
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 14">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Sopivan rivivälin löytäminen on avainvalinta hyvään koko sivun läpi toimivaan rytmiin.
+Kun sopiva rytmi on löytynyt, sitä ja sen kerrannaisia voi käyttää esimerkiksi otsikoissa,
+sivuhuomautuksissa ja leipätekstissä siten että rytmi nappaa lukijan mukaansa ja ohjaa
+häntä sivulla eteenpäin. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Rutter 2006</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 7.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Web-sivustoja tehdessä, vertikaalisessa rytmissä pysymiseen voi vaikuttaa monta
+tekijää: kirjasinten korkeus (fonttikoko), rivikorkeus ja elementtien pystysuuntaiset
+välistykset, sekä reunukset. Kaikki nämä on laskettava tarkkaan, jotta rytmi säilyisi läpi
+sivun. (sama)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Historiallisesti printtisuunnittelussa pystysuuntaista rytmiä on muokattu lisäämällä tilaa
+rivien väliin, tällöin puhutaan rivivälistä. Riviväli koostuu fontin koosta ja rivien väliin
+lisättävästä tilasta. Selaimet poikkeavat perinteisestä typografiasta rivien ulottuvuuksien
+määrityksessä. Webissä selaimet toimivat siten, että kirjaimet asetetaan pystysuunnassa
+rivin keskelle. (Kuvio 2, oikea puoli) Rivien välissä ei ole normaalisti laisinkaan tyhjää
+tilaa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 2. Fontin pystysuuntainen sijoittelu. Vasemmalla kuvankaappaus
+Photoshopista, oikealla kuvankaappaus Google Chromesta.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kun riviväli määritellään lisäämällä tyhjää tilaa rivien väliin, pystytään helposti
+pitämään rytmi sellaisena, että kirjasinten alapuolet osuvat rytmin määrittelemille
+viivoille, jolloin rytmi on yleensä hyvin havaittavissa visuaalisesti. (Kuvio 2, vasen
+puoli) Selaimissa rytmi ei välttämättä aina ole yhtä eksplisiittisesti esillä, vaikka tyyli
+perustuisi printtiversiota vastaavaan vakiomittaiseen rytmiin.
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page14image10608" alt="page14image10608" width="56.880000" height="0.240000">
+      <img src="file:///page14image10768" alt="page14image10768" width="425.999980" height="123.000000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">14
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 15">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Perinteisesti printissä taittaja määrittelee mitat käsin sen jälkeen kun on saanut sisältöä
+taitettavaksi. Webissä esimerkiksi sosiaalisen sivuston, tai blogin tyylejä määritellessä,
+ei etukäteen välttämättä tiedetä mitä sisältöä sivustolle tulee. Lukuisat eri päätelaitteet
+myös vähentävät ennakoinnin mahdollisuutta. Käytännössä siis webissä esimerkiksi
+otsikko voi rivittyä useammalle riville, eikä sen jälkeen jätettävää tilaa voida määrittää
+käsin enää siinä vaiheessa, kun jokin lukulaite tuottaa otsikon ruudulle. Tällöin
+rivimäärän ja mittojen on oltava sellaisia, että rytmi säilyy riippumatta rivityksistä.
+(Kuvio 2, oikea puoli) Gridloverissa rytmin varma jatkuvuus toteutetaan pitämällä
+kaikki pystysuuntaiset mitat perus rivivälin kerrannaisina.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">15
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 16">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">3 Teknologia
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page16image880" alt="page16image880" width="425.999980" height="140.956300">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 3. Gridloverin teknologian osa-alueiden hierarkia
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kuvio 3 havainnollistaa Gridloverin teknologiahierarkian. Tässä kappaleessa käsittelen
+kaikkia muita, paitsi Javascriptiä. Javascript on ohjelmointikieli jolla sovellukset
+selaimissa toteutetaan. Javascript ei kuitenkaan liity suoraan typografiaan tai sen
+laskentaan mitenkään, joten se on rajattu tutkielman ulkopuolelle. Laskenta-kappaleessa
+käyn läpi typografiaan liittyvän matematiikan jota Gridloverin Javascript käyttää.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin päänäkymä on esikatselu sille, miten käyttäjän valitsemien arvojen pohjalta
+laskettu Gridloverin tuottama CSS-koodi vaikuttaa esikatselussa näytettävään web-
+sivuun. Esikatselun sisältöä voi muokata kirjoittamalla Markdown-muotoista tekstiä
+sisällön muokkauspaneeliin. Markdown muunnetaan HTML:ksi ja selain näyttää sen
+esikatselunäkymässä. HTML-esikatselulle annetaan Gridloverin tuottama CSS-koodi ja
+selain näyttää käyttäjän antaman sisällön hänen valintojensa pohjalta tehdyillä tyyleillä.
+Tutkielmassa käsiteltävät selainteknologian pääalueet ovat HTML, CSS ja sen laskenta,
+sekä Markdown-muodon muuntaminen HTML-koodiksi. Gridlover sisältää toki paljon
+muutakin, jota vaaditaan kokonaisuuden toimimiseen. Esimerkiksi käyttäjän valintojen
+ja sisällön tallentamisen välimuistiin, jotta ne eivät katoa kun sivu suljetaan ja ladataan
+uudestaan. Sovelluslogiikkaan liittyvät puolet toteutuksesta eivät kuitenkaan suoraan
+liity typografiaan, joten ne on rajattu tutkielman ulkopuolelle.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">16
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 17">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">3.1 HTML
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">HTML (Hypertext Markup Language) on merkkauskieli jolla kuvataan web-
+dokumenttien sisältöjä. HTML koostuu elementeistä, jotka merkataan dokumenttiin
+tagipareilla. Esimerkiksi ylimmän tason otsikko merkataan seuraavanlaisesti:
+</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">&lt;h1&gt;Otsikko&lt;/h1&gt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Web Platform Docs: Basic of HTML</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 10.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 4. Yksinkertainen HTML rakenne
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin ja CSS-typografian kannalta tärkeintä on ymmärtää että HTML on
+puurakenne, jossa on sisäkkäisiä elementtejä. Kuvio 4 havainnollistaa termit
+juurielementti, lapsielementti ja isäntäelementti. Juurielementti on sisäkkäisessä
+rakenteessa ylimmän tason elementti, juurielementtinä on aina </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">.
+Esimerkkikoodissa </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">on </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin lapsi. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">p </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ovat </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin
+lapsia. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">taas on </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">p </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementtien isäntäelementti ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">on </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin
+isäntäelementti.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">3.2 Markdown
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Markdown on tapa merkata tekstiä siten, että se on helposti muunnettavissa HTML-
+muotoon. Sen tarkoitus on tehdä mahdolliseksi kirjoittaa helppolukuista tekstiä
+nopeasti, ilman suuria syntaksivaatimuksia, siten että teksti on kuitenkin muunnettavissa
+suoraan selaimiin kelpaavaksi HTML-koodiksi nopeasti ja varmatoimisesti.
+Markdownin syntaksin tärkein tavoite on olla mahdollisimman helppolukuista, mutta
+mahdollistaa silti dokumentin rakenteen määrittely. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Gruber 2004</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 12.6.2014)
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page17image9904" alt="page17image9904" width="178.320000" height="0.240000">
+      <img src="file:///page17image10064" alt="page17image10064" width="425.999980" height="104.965600">
+      <img src="file:///page17image10232" alt="page17image10232" width="60.960000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">17
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 18">
+      <img src="file:///page18image384" alt="page18image384" width="425.999980" height="179.990000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 5. Markdown esimerkki
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Markdown-tekstiä (Kuvio 5) voi lähettää sellaisenaan vaikkapa sähköpostissa, sen
+ollessa silti täysin kenen tahansa ymmärrettävissä. HTML-koodin tagimääreet taas
+tekevät dokumentista jo huomattavasti vaikealukuisemman. Tämä on yksi syy sille,
+miksi Gridloverin esikatselun muokkaus tapahtuu Markdownilla. Markdownin sekaan
+voi myös kirjoittaa mitä tahansa HTML-koodia, joten Markdown mahdollistaa sekä
+nopean perusdokumentin esikatselun, sekä minkä tahansa kokonaisen web-sivun
+esikatselun Gridloverissa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Nykyaikaisissa selaimissa on myös mahdollista editoida sivun sisältöä suoraan, siten
+että selain muodostaa itse HTML-rakenteita käyttäjän muokkausten perusteella. Tästä
+käytetään nimeä contenteditable. Selainten välillä on kuitenkin suuria eroja siinä, miten
+ne käsittelevät contenteditablea, muokkausten päätteeksi lopputuloksena on yleensä
+sekasotkuista HTML-koodia, jota kuitenkin joutuu siistimään käsin jälkeenpäin, jotta se
+toimisi halutulla tavalla. Olen aikaisemmin kokeillut perus tekstinkäsittelyohjelmiston
+toteuttamista contenteditablen avulla ja jouduin toteutuksessa jatkuvasti etsimään
+ratkaisuja uusiin reunaehtoihin ja yhteensopivuusongelmiin eri selainten välillä. Tästä
+syystä päätin jättää Gridloverista kokonaan pois mahdollisuuden sisällön
+muokkaamiseen suoraan esikatselussa. Tein siis erillisen paneelin, jossa sisältö
+määritetään Markdown -muodossa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin ulkopuolellakin Markdown liittyy siis typografiaan siten, että sillä on
+helppo luoda dokumentteja, joiden sisältönä on yhden palstan levyinen teksti, jossa on
+otsikoita, tekstikappaleita, listoja ja lainauksia. Näihin sovelletaan typografisia
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">18
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 19">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">perustyylejä. Markdown -muotoinen dokumentti ei siis sisällä sisällön ohessa tekstin
+tasauksia, värejä tai fontteja, vaan siihen sovelletaan HTML:ksi muunnettuna CSS-
+tiedostoa jossa on yleiset typografiset määreet mainituille elementeille.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">3.3 CSS (Cascading Style Sheets)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">“Cascading style sheets (CSS) on web-sisällön esitystavan kuvaamisen kieli.” (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Web
+Platform Docs: CSS</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 10.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridlover tuottaa käyttäjän valintojen pohjalta CSS-koodia, jota voi käyttää HTML-
+sivujen typografisten tyylien pohjana. Gridloverin esikatselu tapahtuu selaimessa,
+samassa ympäristössä jossa CSS-lopputulosta on tarkoitus soveltaa ja sen esikatselu
+sisältää erillisen upotetun web-sivun, johon tyylipaneelissa oleva CSS-koodi on
+linkitetty. Eli Gridlover näyttää mitä sen tuottama CSS saa aikaan selaimessa käyttäjän
+määrittelemällä sisällöllä. Selainten eroavaisuuksia lopputuloksen suhteen voi
+tarkastella avaamalla Gridloverin eri selaimilla.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">CSS:llä siis määritellään käytännössä, miten selain esittää Typografia -kappaleessa
+esitellyt konseptit ja miten voi toteuttaa typografisen design järjestelmän Gridloverin
+antaman koodin pohjalta.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">CSS koostuu säännöistä (rule). Jokaisella säännöllä on valitsin (selector), jonka jälkeen
+tulee esittelylohko (declaration block), joka sisältää määreitä (declaration). Nämä
+määreet kertovat miltä valitsimen osoittaman HTML -elementin tulee näyttää. CSS:llä
+voidaan määrittää myös joiltain osin elementtien käyttäytymistä, esimerkiksi
+vastaanottaako elementti klikkauksia, tai voiko sen tekstiä valita. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">CSS 2.1
+Specification: 4.1.8</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 10.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kuvio 6 havainnollistaa koodiesimerkissä CSS:n pääasialliset osat. Näitä osia
+muokkaamalla ja uudelleen järjestämällä pystyy jo luomaan omat tyylinsä jotka
+perustuvat Gridloverin antamiin mittoihin.
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page19image12224" alt="page19image12224" width="22.560000" height="0.240000">
+      <img src="file:///page19image12384" alt="page19image12384" width="97.440000" height="0.240000">
+      <img src="file:///page19image12544" alt="page19image12544" width="39.360000" height="0.240000">
+      <img src="file:///page19image12704" alt="page19image12704" width="93.600000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">19
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 20">
+      <img src="file:///page20image384" alt="page20image384" width="425.999980" height="227.990000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 6. CSS-koodin pääasialliset osat
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Valitsimella kerrotaan mihin HTML-elementtiin tai -elementteihin sääntö tulee
+kohdistaa. Valitsimet voivat olla monimutkaisia ja sisältää ehtoja sille, mihin niiden
+tulee kohdistua. Elementeille voi antaa esimerkiksi uniikin tunnisteen yksilöimään tietty
+elementti, tai yhteisen luokkanimen, jolla kohdistaa sääntö samalla kertaa moneen eri
+nimiseen elementtiin. Gridlover tuottaa valmiit tyylisäännöt </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, sekä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h2</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h3</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h4
+</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">p </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementeille ja käyttää vain yksinkertaisia elementin nimeen perustuvia valitsimia.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Valmiit tyylit sisältävät myös muutaman muun säännön (kts. Rivikorkeuteen vaikuttavat
+elementit -kappale), jotka varmistavat että tehoste-elementit eivät vaikuta vertikaaliseen
+rytmiin. Esimerkiksi tekstin korostamiseen tarkoitettu </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">b </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti lihavoi tekstiä
+oletuksena ja vaikuttaa joillakin fonteilla rivikorkeuteen hieman, tällöin vertikaalinen
+rytmi ei pysy tasaisena (yksittäinen rivi on liian korkea) ja sivun harmonia järkkyy.
+Yhden palstan sivulla yhden tai kahden pikselin heitto pystysuuntaisessa rytmissä ei
+välttämättä ole kovin näkyvä virhe, mutta jos sivulla on esimerkiksi aseteltu pääsisältö
+ja sivupalkki samaan rytmiin, silloin sivupalkin ja pääsisällön rivit eivät välttämättä ole
+enää pystysuunnassa samalla linjalla.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">on dokumentin näkyvän sisällön sisältävä elementti. Koska fonttimääreet
+periytyvät </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin sisällä oleville elementeille, ne saavat oletusarvoisesti
+saman fonttikoon ja rivikorkeuden kuin </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, ellei niillä ole oletusarvoisesti, tai CSS-
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">20
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 21">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">määreiden seurauksena muita tyylejä. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h2</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h3 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h4 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">merkitsevät otsikkotasoja, aivan
+kuten tavallisessa tekstinkäsittelyohjelmassa. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">p </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti merkitsee tekstikappaletta,
+sille annetaan tyylimääreet vain ylä- ja alamarginaaleille, periytyminen antaa sille samat
+</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin fonttimääreet.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Periytyminen on olennainen osa CSS:ää, mutta selainten typografian perusteita ja
+Gridloverin toimintaa voi ymmärtää ilman syvää perehtymistä periytyvyyssääntöihin.
+Olennaista on muistaa että fonttikoko ja rivikorkeus periytyvät, mutta muut
+pystysuuntaiset mitat eivät.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">3.4 Mittayksiköt
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">“Pikselit ovat edelleen kanoninen mittayksikkö webissä, koska niiden käsittely on aina
+samanlaista. Monet muut mitat muunnetaan suoraan pikseleiksi, myös JavaScript
+ilmaisee mitat pikseleinä.” (Coyier 2013, hakupäivä 30.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">CSS:ssä on mahdollista käyttää monenlaisia mittayksiköitä. Yleisimmät käytetyt
+yksiköt ovat järjestyksessä pikseli (merkitään px), em ja rem. Pikseli on selainten
+käyttämä pituuden perusyksikkö, johon kaikki muut pituuden mitat lopulta lasketaan.
+Tästä syystä se on yleisimmin käytetty yksikkö, sekä helpoin käyttää ja ymmärtää. Em
+on fonttikoon kertoimena mittoja määrittävä yksikkö. Rem on juurielementin fonttikoon
+kertoimena mittoja määrittävä yksikkö. Nämä yleisimmät yksiköt ovat ainoita, jotka
+soveltuvat vertikaalisen rytmin laskentaan, muiden yksiköiden laskennallinen
+pikseliarvo voi muuttua fontin, ruutukoon tai laitteen ominaisuuksien mukaan. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">W3C
+CSS Values and Units Module Level 3: Font-relative lengths</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 30.4.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Fyysiset mitat, kuten cm tai mm ovat käytettävissä, mutta ne eivät vastaa todellisen
+maailman mittoja ruudulla, vaan ovat suhteellisia mittoja, joiden perustana on pikseli.
+Pikselin koko voi vaihdella laitteesta riippuen, jolloin mm ja cm voivat olla eri mittaisia
+eri laitteilla. Fyysiset mitat toimivat luotettavasti CSS:ssä vain printatussa materiaalissa.
+(sama)
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page21image13280" alt="page21image13280" width="25.440000" height="0.240000">
+      <img src="file:///page21image13440" alt="page21image13440" width="292.560000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">21
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 22">
+      <table style="border-collapse: collapse"><colgroup><col style="width: 12.521152%"><col style="width: 22.222222%"><col style="width: 25.042301%"><col style="width: 20.078962%"><col style="width: 20.135364%">
+        </colgroup><tbody><tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Yksikkö
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Laskentasuhde
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Fonttikoko
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <img src="file:///page22image4608" alt="page22image4608" width="0.960000" height="0.960000">
+            <img src="file:///page22image4928" alt="page22image4928" width="0.960000" height="0.960000">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Rivikorkeus
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <img src="file:///page22image6472" alt="page22image6472" width="0.960000" height="6.000000">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Marginaalit
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">px
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">absoluuttinen
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">absoluuttinen
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">absoluuttinen
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">absoluuttinen
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">em
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">kerroin fonttikoolle
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">kerroin isäntäelementin
+fonttikoolle
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">kerroin elementin
+fonttikoolle
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">kerroin elementin
+fonttikoolle
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">rem
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">kerroin
+juurifonttikoolle
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">=
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">=
+</span></p>
+              </div>
+            </div>
+            <img src="file:///page22image25440" alt="page22image25440" width="0.960000" height="0.960000">
+            <img src="file:///page22image25760" alt="page22image25760" width="0.960000" height="0.960000">
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">=
+</span></p>
+              </div>
+            </div>
+            <img src="file:///page22image27160" alt="page22image27160" width="0.960000" height="0.960000">
+          </td>
+        </tr>
+      </tbody></table>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">TAULUKKO 1. Mittayksiköiden suhteellisuus
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Taulukossa 1 listaan mihin suhteutettuna selaimet laskevat kullekin Gridloverissa
+käytössä olevalle yksikölle lopullisen koon pikseleinä. Kuten taulukosta voi päätellä,
+em-yksiköt ovat luonteensa vuoksi vaikea mittayksikkö käyttää, koska mittoja
+määritellään kertoimina ja kutakin mittaa määriteltäessä täytyy tietää, mille kyseinen
+mitta on kertoimena. Tämä tuottaa erityisesti päänvaivaa kun halutaan laskea
+tasapikseleihin osuvia mittoja.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Pikseli on CSS:ssä pienin mitta, jota voi käyttää, se lasketaan aina kokonaisluvuiksi,
+siitä ei käytetä desimaalilukuja. Pikselin voi ajatella esimerkiksi millimetripaperilla
+olevaksi yhdeksi ruuduksi.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Em on suhteellinen yksikkö. Em tarkoittaa kerrointa kussakin kontekstissa määritellylle
+vertauskohdalle, vertauskohdaksi on määritelty fonttikoko. Em-yksikkö voi olla vaikea
+hahmottaa, joten käyn siitä läpi muutamia esimerkkejä.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Jos selaimen oletusfonttikoko on 16 px ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementille määritetään fonttikooksi 2
+em, lopullinen fonttikoko </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementillä on tällöin 32 px (16 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">2= 32 px). Jos
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">taas tämän äskeisen elementin lapseksi laitetaan otsikkoelementti, jolla on fonttikokona
+2 em, sen fonttikooksi tulee tällöin 64 px (16 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">2 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">2 = 64px). Näin fonttikoko
+kertautuu aina isäntäelementin fonttikoon mukaan. Lukua, johon suhteessa em-yksiköitä
+lasketaan kutsutaan kontekstiksi. Yleinen kaava em-yksiköiden laskennalle suhteessa
+pikseleihin on:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">pikselimitta = em-mitta </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">konteksti
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">22
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 23">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Seuraavassa kuvassa (Kuvio 7) on havainnollistettuna em-laskenta sisäkkäisten
+elementtien fonttikokoille ja rivikorkeuksille. Tummennetut, numeroidut kuplat
+merkkaavat arvoja — syntyneitä konteksteja — joiden perusteella muita arvoja
+lasketaan. Paikat joissa arvoja käytetään, on merkattu vastaavan numeroisilla, haaleilla
+kuplilla. Vasemmalla ovat CSS-määreet em-yksiköissä. Näiden perässä on
+laskutoimitus jonka perusteella lopullinen pikseliarvo syntyy. Oikealla on lopullinen
+selaimen käyttämä pikseliarvo. Numeroarvoina on käytetty Gridloverissa käytettäviä
+oletusarvoja.
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page23image3968" alt="page23image3968" width="425.999980" height="155.000000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 7. Esimerkki em-laskennasta pikseleiksi
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Rem (root em) on samalla tavoin suhteellinen yksikkö kuin em, mutta sen arvo on
+sidottu aina juurielementin (</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">) fonttikokoon. Eli jos elementin rivikorkeudeksi
+määritellään 2 rem, tuo 2 rem lasketaan aina suhteessa </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin fonttikokoon,
+eikä kyseisen elementin fonttikokoon. Tämä tekee rem-yksiköistä yhtä helpon käsitellä
+kuin pikselit, mutta silti suhteellisen. Jos sivuston kaikki mitat on määritelty rem-
+yksiköissä, sivuston kaikkia mittoja voi halutessaan suurentaa ja pienentää pelkästään
+muuttamalla </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin fonttikokoa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin toteuttamiseksi jouduin syventämään tuntemustani selainteknologioista
+paljon, sekä lukemalla kielten määritelmiä ja tutkimalla selainten välisiä eroja
+määritelmien toteuttamisessa. Kohdeyleisöön kuuluvan loppukäyttäjän ei kuitenkaan
+tarvitse ymmärtää kuin hyvin perustasolla, miten HTML-dokumentteja luodaan ja miten
+niihin liitetään tyylitietoja CSS:llä. Typografian perustuntemuskaan ei ole pakollista
+pystyäkseen hyötymään Gridloverin käytöstä.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">23
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 24">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">4 Käyttöliittymä
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Käyttöliittymän tärkein periaate on suora manipulaatio. Suora manipulaatio tarkoittaa
+sitä että asia joka muuttuu, sekä käyttöliittymä joka sitä muuttaa, ovat sama asia. Suoran
+manipulaation toteutumista vastaan Gridloverissa voisi väittää siten, että
+esikatselualueen sisältöä ei voi muokata suoraan, mutta Gridloverin tapauksessa
+manipuloitava asia on typografiset lähtöarvot, sekä CSS-koodi joka vaikuttaa
+esikatseluun. Gridloverissa siis tarkastellaan reaaliajassa miten muokatut arvot
+muuttavat haluttua lopputulosta.
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page24image4320" alt="page24image4320" width="425.999980" height="326.942200">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 8. Gridloverin käyttöliittymän osat numeroituna
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Fonttikoko (Kuvio 8, merkattu numerolla 1)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tällä valitsimella valitaan alustava fonttikoko. Numero on aina pikseleinä, vaikka
+numeron perässä ei näytetä yksiköitä. Tähän on muutama syy:
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">24
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 25">
+      <div class="layoutArea">
+        <div class="column">
+          <ol>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Kokonaislukuja kymmenestä viiteenkymmeneen on helpompi hahmottaa kuin
+pitkiä desimaalilukuja välillä yhdestä kolmeen.
+</span></p>
+            </li>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Selaimet käsittelevät sisäisesti kaikkia arvoja pikseleinä. Arvoja voi määritellä
+muissa yksiköissä, mutta selain muuntaa ne aina pikseleiksi, ennen kuin laskee
+elementtien koot ja piirtää sivun.
+</span></p>
+            </li>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Pikseli on helpoiten ymmärrettävä ja eniten käytetty CSS-yksikkö, siksi se on
+myös Gridloverin oletusarvo CSS-koodissa, jolloin on myös perusteltua pitää
+fonttikoon säätö pikseliarvona.
+</span></p>
+            </li>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Eri arvoilla alustettuja Gridlover-tuotoksia voisi vertailla muuntamatta yksiköitä
+keskenään yhtenäisiksi.
+</span></p>
+            </li>
+          </ol>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Rivikorkeus (Kuvio 8, merkattu numerolla 2)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tällä valitsimella valitaan rivin korkeus. Rivikorkeus on kerroin fonttikoolle. Rivin
+korkeus määritellään fonttikoon kertoimena, jotta sitä ei tarvitsisi säätää uudestaan joka
+kerta kun fonttikokoa muuttaa. Jos rivikorkeus määriteltäisiin CSS-yksiköinä, sen
+käyttäytyminen muuttuisi yksiköiden mukaan. Aikaisemmissa Gridloverin versioissa
+sekä fonttikoko että rivikorkeus määriteltiin sisäisesti pikseleinä ja kertoimena, mutta
+näytettiin käyttäjälle hänen valitsemissaan yksiköissä, mutta tämä oli harhaanjohtavaa,
+sillä käyttäjän valitsemat arvot muuttuivat yksiköiden muuttuessa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Skaala (Kuvio 8, merkattu numerolla 3)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Skaala on kerroin, jonka mukaan otsikkotasojen fonttikoko määritetään. Tämän voisi
+näyttä myös suhdelukuna (1:1.168), mutta pelkkä desimaaliluku on helpompi
+hahmottaa, joten “1:” sen edessä olisi vain turhaa visuaalista melua.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Fonttikoon, rivikorkeuden ja skaalan arvoja voi säätää nopeasti raahaamalla
+liukuvalitsinta, jolloin on helppo tarkastella visuaalisesti säädön aikana miten arvon
+muutos vaikuttaa lopputulokseen. Arvot voi myös syöttää näppäimistöllä suoraan
+numeroina, klikkaamalla numeroarvoa.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">25
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 26">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Käyttöliittymän näkymät (Kuvio 8, merkattu numerolla 4)
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <ol>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Grid-nappi näyttää ja piilottaa esikatselualueelta (Kuvio 8: numero 7)
+visuaalisen esityksen vertikaalisesta rytmistä ja elementtien marginaaleista.
+Rytmi näytetään osittain läpinäkyvinä sinisinä vaakaviivoina. Marginaalit
+väritettyinä, osittain läpinäkyvinä sinisinä alueina.
+</span></p>
+            </li>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Content-nappi näyttää ja piilottaa sisältöpaneelin esikatselun päällä.
+Sisältöpaneeli on tekstikenttä, johon kirjoitetaan haluttu sisältö Markdown-
+muodossa. Esikatselu päivittyy automaattisesti aina kun sisältöpaneeliin
+kirjoittaa. Sisältöpaneelin saa pois näkyvistä klikkaamalla uudestaan content-
+nappia.
+</span></p>
+            </li>
+            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
+              <p><span style="font-size: 12pt;">Styles-nappi näyttää ja piilottaa tyylipaneelin.
+</span></p>
+            </li>
+          </ol>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Tyylipaneelin valinnat (Kuvio 8, merkattu numerolla 5)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tyylipaneelin yläosa sisältää valinnat CSS-koodin käyttämille yksiköille ja valinnan
+vaihtaa koodin formaattia CSS:n kaltaisiin kieliin, jotka mahdollistavat muuttujien
+käytön.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">CSS-koodi (Kuvio 8, merkattu numerolla 6)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">CSS-koodi on valittavissa olevaa tekstiä, vaikka sisältääkin mahdollisuuden muokata
+sinisellä korostettuja arvoja. Sinisten numeroiden arvoja voi muuttaa klikkaamalla ja
+raahaamalla vaakasuunnassa tai klikkaamalla numeroa ja painamalla ylös- ja alaspäin
+nuolinäppäimiä. Muokattavia arvoja ovat palstan leveys (</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">max-width</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">), kunkin
+otsikkotason fonttikoko ja ylä- ja alamarginaalit, sekä tekstikappaleiden ylä- ja
+alamarginaalit.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Otsikoiden koot määritellään kokonaislukuina skaalan askelina, sijainti skaalalla on
+lasketun arvon perässä suluissa. Marginaalien arvojen perässä suluissa olevat
+kokonaisluvut ovat kerroin kunkin elementin rivikorkeudelle.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">26
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 27">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Esikatselu (Kuvio 8, merkattu numerolla 7)
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Esikatselu sisältää oletusarvoisesti satunnaista täytetekstiä, jossa on merkattuna neljä
+otsikkotasoa, leipätekstiä ja lista. Esikatselu näyttää miten käyttäjän valitsemien arvojen
+tuottama CSS vaikuttaa oletussisältöön tai käyttäjän määrittelemään sisältöön.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">27
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 28">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">5 Laskenta
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Jotta vertikaalinen rytmi osuisi kokonaisiin pikseleihin, kaikki laskenta on tehtävä
+pikseleihin kohdistuvia pyöristyksiä silmällä pitäen. Laskentatavat ovat sovellettavissa
+mediasta riippumatta, mutta em-laskentaan liittyvä pikselintarkkuuden haku on CSS:ään
+liittyvä erikoisuus. Toivon mukaan pikselintarkkuuteen liittyvän koodin voi poistaa
+Gridloverista, kun selaimet alkavat paremmin tukea sivun taiton laskemista
+desimaalitarkkuuksilla kokonaisten pikselien sijaan.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kuten Typografinen design järjestelmä -kappaleessa käydään läpi, aluksi on valittava
+lähtökohdaksi fonttikoko, rivikorkeus ja skaalakerroin. Aluksi perusfonttikoko
+määritellään pikseleinä, perusrivikorkeus desimaalilukuna, samoin skaalakerroin
+desimaalilukuna. Tämän jälkeen päätetään laskettavien elementtien fonttikoon sijainti
+skaalalla kokonaislukuna, sekä ylä- ja alamarginaalit kokonaislukuina rytmin
+kerrannaisina. Rytmin yksikkö on </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin rivikorkeus. Näiden lukujen
+pohjalta lasketaan fonttikoko, rivikorkeus ja ylä- ja alamarginaalit kullekin halutulle
+elementille, Gridloverin tapauksessa </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h2</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h3</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h4 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">p </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementeille.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Sopivat luvut eri elementeille voi valita monesta eri lähtökohdasta. Esimerkiksi
+käyttämällä lähtökohtana historiallisesti merkityksellisiä mittoja, jostakin sisältöön
+liittyvästä lähtöisin olevia mittoja, tai tarkastelemalla lopputulosta visuaalisesti ja
+säätämällä arvoja interaktiivisesti kunnes ne näyttävät sopivilta. Käytän esimerkeissä
+Gridloverissa olevia oletusarvoja.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">28
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 29">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">5.1 Skaala
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page29image880" alt="page29image880" width="442.016380" height="133.850000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 9. Esimerkkiskaala
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kuviossa 9 on havainnollistettuna miten sijainti skaalalla, lasketut fonttikoot ja
+otsikoiden visuaalinen koko liittyvät toisiinsa, kun käytetään Gridloverin oletusarvoja.
+Tässä kappaleessa käyn läpi miten arvot skaalalla lasketaan.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverissa elementtien fonttikoot määritellään ilmaisemalla kokonaislukuna millä
+kohden skaalaa fonttikoko sijaitsee. Mikään ei estä käyttämästä desimaalilukua
+ilmaisemaan sijaintia skaalalla, mutta yksinkertaisuuden vuoksi Gridloverissa käytetään
+vain kokonaislukuja. Hienojakoisemman kontrollin elementtien fonttikokojen
+määrittämiseen saa pienentämällä skaalakerrointa ja samalla tuplaamalla skaalasijainnin
+luvut.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Skaalattu fonttikoko saadaan, kun fonttikoko, jonka pohjalta skaalaa lähdetään
+laskemaan, kerrotaan skaalakertoimella skaalasijainnin mukaan:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">skaalattu koko = perusfonttikoko </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">skaalakerroin ^ skaalasijainti
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin oletus perusfonttikoolla (19 px), suurimman otsikon (</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti) koko
+lasketaan näin:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">110.808 px = 19 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1.8 ^ 3
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kun luku pyöristetään kokonaisiksi pikseleiksi, saadaan lopullinen koko, 111 px. Luvun
+voi halutessaan jättää pyöristämättömäksi, sillä selaimet pyöristävät desimaaleina
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">29
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 30">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">määritetyt pikselimääreet automaattisesti kokonaisluvuiksi. Muilla kuin piksliyksiköillä
+laskettaessa, luku jätetään mahdollisimman tarkaksi desimaaliluvuksi, josta selain
+laskee itse pikseliarvon käytettäväksi.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Laskutoimitus toimii identtisesti rem-yksiköillä, mutta em-yksiköillä on otettava
+huomioon konteksti, jossa lopullinen luku tulee esiintymään. (kts. Mittayksiköt -
+kappale) Kontekstin voi ottaa huomioon monella tavalla, mm. määrittämällä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-
+elementin fonttikoon valitsemallaan pikseliarvolla ja aloittamalla skaalan arvosta 1 em.
+Gridloverin on kuitenkin tarkoitus tuottaa mahdollisimman vähän CSS-koodia. Koodin
+on tarkoitus olla mahdollisimman yleispätevää, joten se ei määritä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementille
+fonttikokoa. Konteksti lasketaan kaavaan mukaan seuraavalla tavalla:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">skaalattu koko = perusfonttikoko </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">skaalakerroin ^ skaalasijainti </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1 / konteksti
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Koska otsikkoelementit sijaitsevat aina </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin lapsielementteinä, niillä
+kontekstina on </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementille annettu fonttikoko. Gridloverissa tämä on 19 px.
+Aikaisemmin pikseleinä laskettu suurimman otsikon (</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti) koko lasketaan em
+yksiköillä näin:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">5.832 em = 1.1875 em </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1.8 ^ 3 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1 / 1.1875
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Laskelmat toistetaan jokaiselle otsikkokoolle. Näin saadaan </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h2 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementille
+skaalasijainnilla 2 fonttikooksi 64 px, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h3 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementille skaalasijainnilla 1 fonttikooksi 34
+px ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h4 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementille skaalasijainnilla 0 fonttikooksi 19 px. Skaalaa voi myös laskea
+negatiiviseen suuntaan antamalla skaalasijainniksi negatiivinen numero.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">5.2 Rytmi
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverissa rytmi on aina perusrivikorkeus pikseleiksi pyöristettynä. Se lasketaan siis
+suoraan kertomalla perusfonttikoko perusrivikorkeudella ja pyöristämällä tulos
+kokonaisiksi pikseleiksi.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">rytmin yksikkö </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">≈ </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">perusfonttikoko </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">perusrivikorkeus
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">30
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 31">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin oletus perusrivikorkeudella (1.4), leipätekstin (</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti) koko
+lasketaan näin:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">26.6 px = 19 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1.4
+27 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">≈ </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">26.6 px
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kun elementin fonttikoko ylittää rivikorkeuden, sovitetaan kyseisen elementin
+rivikorkeus olemaan pienin mahdollinen kerrannainen perusrivikorkeudesta, johon
+elementin fonttikoko mahtuu. Toisin sanottuna: lasketaan montako riviä kyseinen
+fonttikoko tarvitsee, jotta rytmi pysyy ennallaan, eikä suurikokoinen teksti mene
+pystysuunnassa päällekkäin. Laskenta tapahtuu seuraavalla kaavalla. (Huomioi
+jakolaskun ympärillä oleva ceiling funktio.)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">elementin rivikorkeus = rytmin yksikkö </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 10.000000pt; font-family: 'CambriaMath'; color: rgb(14.509800%, 14.509800%, 14.509800%)">⌈ </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">skaalattu fonttikoko / rytmin yksikkö </span><span style="font-size: 10.000000pt; font-family: 'CambriaMath'; color: rgb(14.509800%, 14.509800%, 14.509800%)">⌉
+</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin oletusarvoilla (27 px rytmi), </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin (111 px fonttikoko) rivikorkeus
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">lasketaan näin:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">135 px = 27 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">×</span><span style="font-size: 10.000000pt; font-family: 'CambriaMath'; color: rgb(14.509800%, 14.509800%, 14.509800%)">⌈ </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">111 px / 27 px </span><span style="font-size: 10.000000pt; font-family: 'CambriaMath'; color: rgb(14.509800%, 14.509800%, 14.509800%)">⌉<br>
+</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Absoluuttisilla yksiköillä (px ja rem) rivin laskeminen on hyvin suoraviivaista, mutta
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">em-yksiköillä on jälleen otettava huomioon konteksti. Lasketaan ensin rytmin yksikkö:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1.4 = 1.1875 em </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1.4 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1 / 1.1875
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Koska em-yksiköt ovat fonttikoon kerrannaisia, ylempänä määritetty rytmin yksikön
+laskukaava tuottaa perusrivikorkeuden arvon. Tämä arvo täytyy kuitenkin pyöristää
+kokonaisiksi pikseleiksi, jotta rytmi pysyy kohdallaan. Jos tästä arvosta laskee suoraan,
+montako riviä otsikkotason fonttikoot tarvitsevat, voi tulokseksi tulla pikseleiksi
+muunnettuna jotain muuta kuin aikaisemmin lasketun 27 px arvon kerrannaisia.
+Tarvitun arvon voimme selvittää seuraavalla kaavalla.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">kohdemitta = fonttikoko </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">rytmin yksikkö </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1 / konteksti
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page31image12256" alt="page31image12256" width="6.000000" height="13.920000">
+      <img src="file:///page31image12416" alt="page31image12416" width="6.000000" height="13.920000">
+      <img src="file:///page31image12576" alt="page31image12576" width="6.000000" height="13.920000">
+      <img src="file:///page31image12736" alt="page31image12736" width="3.600000" height="13.920000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">31
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 32">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tiedämme että selaimen oletusfonttikoko on 16 px ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementtimme fonttikoko
+on 1.1875 em, tai 19 px, kuten perusfonttikooksi on määritelty. Tiedämme myös
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">aikaisemmasta pikselilaskennasta, että halutulla rivikorkeudella 1.4, rivikorkeudeksi
+tulee pikseleinä 26.6 px, joka on pyöristettynä 27 px. Tällä tiedolla voimme laskea
+halutusta lopputuloksesta rytmin yksikön em-mittana. Tässä tapauksessa:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">27 px = 19 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">rytmin yksikkö </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1 / 1.1875 em
+rytmin yksikkö = 1 / (19 px / 27 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1 / 1.1875 em)
+rytmin yksikkö = 1.6875 em
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Koska rivikorkeus em-yksiköissä lasketaan aina kyseisen elementin fonttikoon
+mukaisessa kontekstissa, eikä siis samassa kontekstissa kuin fonttikoko itsessään, on
+tehtävä vielä yksi kontekstilaskenta jotta mitta olisi suhteessa elementin fonttikokoon:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1.4210526316 em = 1.6875 em </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1 / 1.1875
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Saatua arvoa on nyt turvallista kertoa kokonaisluvuilla siten, että lopputulos on aina
+kokonaisia pikseleitä, jolloin rytmi säilyy tarkkana kautta sivun.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tämän laskutoimituksen sisäistäminen ja toteuttaminen oli vaikein osuus Gridloverin
+toteuttamisessa. Sitä ei ole käytännöllistä laskea käsin, varsinkaan kun se pitää toteuttaa
+uudestaan joka elementille ja otsikoita laskiessa on muistettava ottaa mukaan kunkin
+otsikkotason fonttikoon konteksti. Tästä syystä en listaa erillisiä esimerkkejä
+otsikkotasoille.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Em-yksiköillä laskiessa kannattaa siis aina laskea luvut ensin pikseleiksi ja
+pikseliarvojen perusteella laskea halutut em-arvot lopullisiksi käytettäviksi arvoiksi.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">5.3 Marginaalit
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Ylä- ja alamarginaalit lasketaan kertomalla rytmin yksikkö valitulla kokonaisluvulla.
+Pikseleinä laskettaessa tämä on jälleen hyvin suoraviivaista. Kun halutaan elementille
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">32
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 33">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">kahden rytmin yksikön mittainen marginaali, kerrotaan rytmin yksikkö kahdella.
+Esimerkiksi </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin ylämarginaali:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">27 px </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">2 = 54 px
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Koska aikaisemmassa rytmin yksikön laskennassa otettiin jo huomioon konteksti, myös
+em-yksiköillä marginaalit voidaan kertoa suoraan halutulla rytmin kerrannaisella.
+Esimerkiksi </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">p </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin alamarginaali:
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">1.4210526316 em </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">× </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">2 = 2.8421052632 em
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">33
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 34">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">6 Ongelmia ja ratkaisuja
+</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">6.1 Luhistuvat marginaalit
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 10. Luhistuvat marginaalit otsikon ja tekstikappaleen välillä
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">CSS-taiton erikoisuus marginaalien suhteen on, että ne luhistuvat. Tämä tarkoittaa sitä
+että kahden pystysuunnassa peräkkäisen elementin väliin jäävä tila on vain näistä
+elementeistä suuremman marginaalin omaavan mitan suuruinen. Kuviossa 10 on
+esimerkkinä otsikko jolla on alamarginaalia kolme rytmin yksikköä ja sen perässä
+olevalla tekstikappaleella ylämarginaalia yksi rytmin yksikkö. Näiden väliin jäävä tila ei
+ole yhteensä neljä yksikköä, vaan otsikolle määritelty kolme yksikköä. Marginaalit on
+Gridloverissa visuaalisesti näytetty osittain läpinäkyvällä sinisellä värillä, jolloin
+marginaalien luhistuminen näkyy tummennetulla marginaalivärillä.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Luhistuvat marginaalit ovat CSS:n ominaisuus, eivätkä siis määritelmällisesti kielen
+ongelma. Ne muuttuvat ongelmallisiksi käytännössä, kun tehdään monimutkaista
+taittoa, sillä luhistumiselle ja luhistumattomuudelle on monia reunaehtoja. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">W3C
+CSS2.1 Specification: Collapsing margins </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">2011, hakupäivä 4.5.2014 ) Marginaalien
+luhistuminen on kirjamaisessa taittamisessa hyödyllinen työkalu. Luhistuvilla
+marginaaleilla elementeille siis määritellään keskenäisiä välejä ajatuksella: “Tälle
+elementille tarvitaan vähintään tämän verran tilaa ylä- ja alapuolelle”
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page34image8952" alt="page34image8952" width="419.999980" height="167.184500">
+      <img src="file:///page34image9120" alt="page34image9120" width="25.440000" height="0.240000">
+      <img src="file:///page34image9280" alt="page34image9280" width="202.560000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">34
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 35">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Yleisesti web-taittoa tehdessä, esimerkiksi sovellusten käyttöliittymiä suunnitellessa
+mittojen määrittäminen on yleensä hyvin eksplisiittistä tai suhdelukupohjaista. Tällöin
+luhistuvat marginaalit ja niiden poikkeustapaukset aiheuttavat yleensä lähinnä
+päänvaivaa.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">6.2 Jalkalinjan tasaus rytmiin
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page35image2488" alt="page35image2488" width="425.999980" height="203.000000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 11. Oikealla esikatselu oletusarvoilla, keskellä esikatselu jalkalinjan
+tasauksella, oikealla, sinisellä merkattuna, CSS-lisäykset joilla kohdistus toteutetaan.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kuten Typografia -kappaleessa kerrotaan, selaimet tasaavat kirjaimet rivivälin keskelle.
+Jos rytmin näkyvyyttä sivulla halutaan korostaa, kirjainten jalkalinjat voi tasata rytmin
+viivoille. (Kuvio 11, keskellä) Selainten normaalin rivien käsittelyn vuoksi tämä ei ole
+helppoa, vaan vaatii jokaiselle määritellylle fonttikoolle oman kohdistuksen rytmin
+viivoille. Jalkalinjan tasaus ei välttämättä osu kohdilleen vaikka se olisi määritelty,
+koska määritelty kirjasintyyppi voi verkkovirheen takia jäädä latautumatta, jolloin
+kirjasimen pystysuuntaiset mitat voivat olla erilaiset, kuin ne joiden mukaan rytmin
+mitat on määritelty. Jalkalinjan tasaus visuaalisesti, käytetyn fontin mukaan, on CSS:llä
+mahdollista muutamin keinoin. Käyn läpi vain yksinkertaisimman tavan, jonka
+toteutustapa näkyy kuviossa 11 oikealla.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">CSS-määre </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">position: relative; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">mahdollistaa elementin liikuttamisen siten, että
+sijainnin muutos ei vaikuta muihin elementteihin. Eli muut osat dokumentista
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">35
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 36">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">käyttäytyvät kuin elementin paikkaa ei olisi liikutettu laisinkaan. Määreellä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">top:
+&lt;pituus&gt;; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">kerrotaan elementille kuinka paljon sijaintia tulee muuttaa, suhteessa
+elementin ylälaitaan. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">W3C CSS 2.1 Specification: Relative positioning </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">2011,
+hakupäivä 5.5.2014)
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Koska fonttien mittoja ei pysty lukemaan ohjelmallisesti selaimissa, Gridlover ei vielä
+mahdollista minkäänlaista automaattista jalkalinjan tasausta, vaan tasaus on toteutettava
+itse, kun tyylit on viety Gridloverista omaan projektiin.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">6.3 Rivikorkeuteen vaikuttavat elementit
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page36image4240" alt="page36image4240" width="237.360000" height="0.240000">
+      <img src="file:///page36image4400" alt="page36image4400" width="425.999980" height="170.926300">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 12. Rivikorkeuteen vaikuttavat elementit. Vasemmalla normaali rytmi, keskellä
+</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPS'; font-style: italic">small </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">-elementti, oikealla </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPS'; font-style: italic">sub </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPS'; font-style: italic">sup </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">-elementit.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Joillakin elementeillä on selaimen oletustyyleillä vaikutus rivin korkeuteen. Näistä
+yleisimmät ovat </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">small</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sup </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sub </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementit. (Kuvio 12) Myös </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">code </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">b </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-
+elementit vaikuttavat joillakin fonteilla rivikorkeuteen. Yleisesti kaikki tyylit, jotka
+muuttavat fonttikokoa tai elementin pystysuuntaista kohdistusta rivillä, voivat vaikuttaa
+rivikorkeuteen. Gridloverin tyylejä käytettäessä, on lopullista taittoa tehdessä itse
+testattava, säilyykö rytmi kohdallaan kautta sivun.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">small </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti saa selaimissa oletuksena tyyliksi pienemmän fonttikoon, mutta
+toisin kuin voisi olettaa, suurentaa rivin korkeutta, jolla sijaitsee. (Kuvio 12, keskellä)
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">36
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 37">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Elementin vaikutus rivikorkeuteen poistetaan Gridloverin CSS-koodissa määreellä
+</span></p>
+          <pre><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">line-height: 0;
+</span></pre>
+          <p><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sup </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sub </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementit merkkaavat ylä- ja alaindeksiä. Ne saavat oletusarvoisesti
+selaimissa määreet </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">vertical-align: superscript; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">tai </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">vertical-align:
+subscript; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Nämä määreet määrittävät miten elementti sijoitetaan rivillä suhteessa
+muuhun tekstiin. Selaimet laajentavat riviä näissä tapauksissa, varmistaakseen että ylä-
+ja alaindeksissä olevat tekstit eivät menisi päällekkäin muiden rivien tekstien kanssa
+missään tapauksissa. (Kuvio 12, oikealla) Tämä rytmin rikkova tyyli korjataan
+Gridloverissa määreellä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">vertical-align: baseline; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">jolloin elementit tasataan
+pystysuunnassa rivin jalkalinjaan. Haluttu ylä- ja alaindeksiefekti elementeille annetaan
+edellisessä kappaleessa läpi käydyllä tekniikalla jalkalinjan tasaukseen. Sopivat </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">top </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-
+määreen arvot vaihtelevat fonteittain, mutta yleisesti hyväksytyt arvot ovat </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sup </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-
+elementille </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">top: -0.5em; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sub </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementille </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">bottom: -0.25em; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">(</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">HTML5
+Boilerplate </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">2014, hakupäivä 4.5.2014) Elementit tarvitsevat myös </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">line-height:
+0; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">määreen, koska niiden fonttikoko on normaalia pienempi ja ne saattavat aiheuttaa
+saman vaikutuksen rytmiin kuin </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">small </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">code</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">b</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, sekä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">strong </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementit voivat myös joissain tapauksissa vaikuttaa
+rivikorkeuteen, joten niille annetaan määre </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">line-height: 0;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Mikä tahansa elementti, jolla on reunus, vaikuttaa rivikorkeuteen. Reunusta ei piirretä
+elementin päälle taiton laskemisen jälkeen, vaan reunuksen korkeus lisätään elementin
+korkeuteen. Elementti, jolla on reunus peruuttaa sen lapsielementtinä olevan elementin
+ylämarginaalin luhistumisen, joten reunuksia käyttäessä täytyy olla erityisen tarkkana,
+jos haluaa säilyttää rytmin kohdallaan kautta sivun.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverissa reunukset otetaan huomioon vain </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">hr </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementillä, koska reunusten
+käsittelyyn ei ole mahdollista tehdä yleistä sääntöä. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">hr </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti tarkoittaa
+vaakaviivaa, sen oletustyyli on paksu reunus ja 1 em:n ylä- ja alamarginaalit.
+Elementille annetaan yhden pikselin reunus joka suuntaan määreellä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">border: 1px
+solid;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, sekä yhden pikselin negatiivinen marginaali ylä- sekä alapuolelle määreellä
+</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">margin: -1px auto; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tällöin elementin korkeus on taiton kannalta nolla, vaikka
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page37image14832" alt="page37image14832" width="40.080000" height="0.240000">
+      <img src="file:///page37image14992" alt="page37image14992" width="53.280000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">37
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 38">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">visuaalisesti se tuottaa sivulle kahden pikselin vaakasuuntaisen viivan. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">hr </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin
+reunustyyli on koodissa esimerkkinä, jotta reunusten ja välistysten suhde ei unohtuisi
+Gridloverin tuottamaa CSS-koodia käyttäessä.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">38
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 39">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">7 Pohdinta
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Pitkät numerot, kuten Laskenta -kappaleessa saatu 1.4210526316 em arvo rytmin
+yksiköksi, ovat epäkäytännöllisiä tyylejä käsin tehdessä. Pitkiä desimaaleja on vaikea
+muistaa ja hitaampi käsitellä tekstieditorissa. Yleensä selaimet käsittelevät arvoja
+pikseleiden pyöristyksen suhteen vain muutaman desimaalin tarkkuudella, mutta
+selaimissa on tämän suhteen eroja, joten arvot kannattaa pitää aina mahdollisimman
+tarkkoina.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Vuoden 2012 lopulla Gridloverissa oli käytössä vain neljä desimaalia em-yksiköillä ja
+rytmi kohdistui pikselilleen kaikilla tuetuilla selaimilla. Vuodenvaihteen jälkeen Google
+Chrome päivitti em-laskentaa siten, että rytmin viivat eivät enää kohdistuneet
+pikselilleen tällä tarkkuudella. Tästä syystä CSS-paneelissa on nyt em-yksiköissä olevat
+luvut yhdeksän desimaalin tarkkuudella.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kehittyvät laitteet tuovat myös uusia vaatimuksia pikselitarkkuudelle. Gridloverin
+syntyessä vuonna 2011 suurin osa kuluttajalaitteiden näytöistä oli pikselitiheydeltään
+samankaltaisia. Nykyään laitteita, näyttöjä ja tiheyksiä on niin paljon erilaisia, että
+pikselintarkkuutta on vaikea taata kaikilla laitteilla. Tulevaisuudessa toivon mukaan
+selaimet kehittyvät niin, että pikselilaskennasta voidaan luopua ja luottaa siihen, että
+selaimet laskevat taiton tarkasti ja skaalaavat sen ruudulle sopivaksi.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Toivon siis, että osa tämänkin tutkielman tuloksia olisi vanhentunutta tietoa
+mahdollisimman nopeasti, jotta web-typografia olisi helpommin lähestyttävää ja
+universaalimpaa. Vuosisatoja kehittyneet typografiset periaatteet tuskin muuttuvat
+paljoa seuraavina vuosina, mutta teknologia ja sen mahdollisuudet varmasti antavat
+uusia ulottuvuuksia web-typografialle, kuten web-fonttien ja web-typografian suosioon
+nousu on jo näyttänyt.
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">39
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 40">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">8 Sanasto
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Monille tutkielmassa käytetyille sanoille ei ole virallista suomenkielistä vastinetta, joten
+käytän osittain vapaasti suomennettuja termejä. Vasemmalla on termi suomeksi,
+keskellä englanniksi, oikealla tarvittaessa tarkennus. Gridloverin käyttöliittymä on vain
+englanniksi, joten sanasto helpottaa myös käyttöliittymän ja tutkielman seuraamista
+samanaikaisesti. Englanninkieliset sanat toimivat myös parempina hakutermeinä
+lisätietoa etsiessä, suomenkielisillä vastineilla ei välttämättä ole helppo löytää
+lisämateriaalia luettavaksi.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Typografia
+</span></p>
+        </div>
+      </div>
+      <table style="border-collapse: collapse"><colgroup><col style="width: 29.458240%"><col style="width: 20.993228%"><col style="width: 49.548532%">
+        </colgroup><tbody><tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Selkeys
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Legibility
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <img src="file:///page40image8312" alt="page40image8312" width="0.960000" height="6.000000">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Tarkoittaa kirjasintyypin yksittäisten kirjainten
+vaikutus luettavuuteen
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Luettavuus
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Readability
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Tarkoittaa kirjasintyypin, sekä koko sivun
+typografian vaikutusta siihen, kuinka helppo- ja
+nopealukuista teksti sivulla on.
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Typografinen järjestelmä
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Typographic
+design system
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Kappale 2.1, määritellään tekstissä
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Jalkalinja
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Baseline
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Kirjaimen osa, joka yhdessä muiden rivin
+kirjainten kanssa muodostaa tekstirivin alalinjan,
+jota silmä seuraa.
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Kirjasintyyppi
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Typeface
+</span></p>
+              </div>
+            </div>
+            <img src="file:///page40image25136" alt="page40image25136" width="0.960000" height="0.960000">
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+          </td>
+        </tr>
+      </tbody></table>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">HTML
+</span></p>
+        </div>
+      </div>
+      <table style="border-collapse: collapse"><colgroup><col style="width: 29.458240%"><col style="width: 70.541760%">
+        </colgroup><tbody><tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">HTML-elementti
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <img src="file:///page40image29440" alt="page40image29440" width="0.960000" height="6.000000">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Viittaa HTML-kielen yleiseen käsitteeseen </span><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">elementti
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'CourierNewPSMT'">html </span><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Viittaa HTML-elementtiin, jonka nimi on html
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Juurielementti
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Root element
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Isäntäelementti
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Parent element
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Lapsielementti
+</span></p>
+              </div>
+            </div>
+            <img src="file:///page40image40176" alt="page40image40176" width="0.960000" height="0.960000">
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Child element
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">40
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 41">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">CSS
+</span></p>
+        </div>
+      </div>
+      <table style="border-collapse: collapse"><colgroup><col style="width: 29.558325%"><col style="width: 70.441675%">
+        </colgroup><tbody><tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Esittelylohko
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <img src="file:///page41image3184" alt="page41image3184" width="0.960000" height="6.000000">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Declaration block
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">V alitsin
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Selector
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Määre
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Declaration
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Arvo
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">V alue
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Marginaali
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Margin
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Reunus
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Border
+</span></p>
+              </div>
+            </div>
+            <img src="file:///page41image17600" alt="page41image17600" width="0.960000" height="0.960000">
+          </td>
+        </tr>
+      </tbody></table>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Käyttöliittymä
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Laskenta
+</span></p>
+        </div>
+      </div>
+      <table style="border-collapse: collapse"><colgroup><col style="width: 29.508198%"><col style="width: 70.491802%">
+        </colgroup><tbody><tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Suora manipulaatio
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Direct manipulation
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+      <table style="border-collapse: collapse"><colgroup><col style="width: 29.608622%"><col style="width: 70.391378%">
+        </colgroup><tbody><tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Pohjafonttikoko
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <img src="file:///page41image25800" alt="page41image25800" width="0.960000" height="6.000000">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Base font size
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Perusrivikorkeus
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Base line height
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Rytmin yksikkö
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Rhythm unit
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Rivikorkeus
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Line height
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Skaala
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Scale
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Skaalasijainti
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Scale location
+</span></p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.959990pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Modulaarinen skaala
+</span></p>
+              </div>
+            </div>
+          </td>
+          <td style="border-style: solid; border-top-width: 0.960000pt; border-top-color: rgb(0.000000%, 0.000000%, 0.000000%); border-right-width: 0.960000pt; border-right-color: rgb(0.000000%, 0.000000%, 0.000000%); border-bottom-width: 0.960000pt; border-bottom-color: rgb(0.000000%, 0.000000%, 0.000000%); border-left-width: 0.960000pt; border-left-color: rgb(0.000000%, 0.000000%, 0.000000%)">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Modular scale
+</span></p>
+              </div>
+            </div>
+            <img src="file:///page41image42960" alt="page41image42960" width="0.960000" height="0.960000">
+          </td>
+        </tr>
+      </tbody></table>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">41
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 42">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Lähteet
+</span></p>
+        </div>
+      </div>
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Thompson B., 1969. Homage to the Book. New York : Westvaco
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Bringhurst, R. 2012. Elements of Typographic Style. Seattle: Hartley &amp; Marks.
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Miller, J. 1999. Introduction to Typography. Hakupäivä 4.4.2014.
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://www.sjsu.edu/people/joe.miller/courses/dsgd99/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kalbag, L. 2012. Design Systems. Hakupäivä 6.4.2014.
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://24ways.org/2012/design-systems/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Rutter, R. 2006. Compose to a Vertical Rhythm. Hakupäivä 7.4.2014
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://24ways.org/2006/compose-to-a-vertical-rhythm/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Brown, T. 2011. More Meaningful Typography. Hakupäivä 6.4.2014.
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://alistapart.com/article/more-meaningful-typography</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Bos B. Çelik T., Hickson I., Lie H. 2011. W3C CSS 2.1 Specification. Hakupäivä
+10.4.2014. &lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://www.w3.org/TR/CSS21/syndata.html#declaration</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Lie H. (Opera Software), Atkins T. (Google), Etemad E. (Mozilla), 2013. W3C CSS
+Values and Units Module Level 3. Hakupäivä 30.4.2014 &lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://www.w3.org/TR/css3-
+values/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Web Platform Docs. 2014. Web Platform Docs: HTML. Hakupäivä 10.4.2014.
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://docs.webplatform.org/wiki/guides/the_basics_of_html</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Web Platform Docs. 2014. Web Platform Docs: CSS. Hakupäivä 10.4.2014.
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://docs.webplatform.org/wiki/css</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Etemad E. 2011. W3C CSS Snapshot 2010. Hakupäivä 10.4.2014.
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://www.w3.org/TR/css-2010</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page42image9720" alt="page42image9720" width="262.320000" height="0.240000">
+      <img src="file:///page42image9880" alt="page42image9880" width="191.760000" height="0.240000">
+      <img src="file:///page42image10040" alt="page42image10040" width="262.320000" height="0.240000">
+      <img src="file:///page42image10200" alt="page42image10200" width="274.800000" height="0.240000">
+      <img src="file:///page42image10360" alt="page42image10360" width="270.960000" height="0.240000">
+      <img src="file:///page42image10520" alt="page42image10520" width="138.000000" height="0.240000">
+      <img src="file:///page42image10680" alt="page42image10680" width="34.080000" height="0.240000">
+      <img src="file:///page42image10840" alt="page42image10840" width="290.640000" height="0.240000">
+      <img src="file:///page42image11000" alt="page42image11000" width="176.640000" height="0.240000">
+      <img src="file:///page42image11160" alt="page42image11160" width="156.000000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">42
+</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page" title="Page 43">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gruber J. 2004. Markdown. Hakupäivä 12.4.2014.
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">https://daringfireball.net/projects/markdown/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;<br>
+Bynens M., Mari</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ş </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">C., Reinl H. C. HTML5 Boilerplate 2014. Hakupäivä 4.5.2014
+&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://html5boilerplate.com</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Coyier C. The Lengths of CSS, 2013. Hakupäivä 30.4.2014 &lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://css-tricks.com/the-
+lengths-of-css/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
+</span></p>
+          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Harjukelo S. 2013. Visuaalisen ilmeen rakentaminen.<br>
+Maatta H. 2011. Visuaalisen ilmeen ja virallisen Facebook-sivun suunnittelu ja toteutus.
+Tarvainen M. 2011. Käyttäjäystävällinen blogikäyttöliittymä.
+</span></p>
+        </div>
+      </div>
+      <img src="file:///page43image3992" alt="page43image3992" width="215.520000" height="0.240000">
+      <img src="file:///page43image4152" alt="page43image4152" width="131.760000" height="0.240000">
+      <img src="file:///page43image4312" alt="page43image4312" width="119.760000" height="0.240000">
+      <img src="file:///page43image4472" alt="page43image4472" width="70.560000" height="0.240000">
+      <div class="layoutArea">
+        <div class="column">
+          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">43&nbsp;</span></p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
