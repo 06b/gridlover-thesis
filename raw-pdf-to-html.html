@@ -88,28 +88,7 @@ Keywords: Typography, web design, css, web-sites
 
 ## Sisällys
 
-2. Typografia
-  1. Design järjestelmä
-  2. Modulaarinen skaala
-  3. Kirjasintyypit
-  4. Vertikaalinen rytmi
-3 Teknologia
-  1. HTML
-  2. Markdown
-  3. CSS (Cascading Style Sheets)
-  4. Mittayksiköt
-4. Käyttöliittymä
-5. Laskenta
-  1. Skaala
-  2. Rytmi
-  3. Marginaalit
-6. Ongelmia ja ratkaisuja
-  1. Luhistuvat marginaalit
-  2. Jalkalinjan tasaus rytmiin
-  3. Rivikorkeuteen vaikuttavat elementit
-7. Pohdinta
-8. Sanasto
-9. Lähteet
+TODO: Generoi sisällys automaattisesti
 
 
 ## Johdanto
@@ -209,57 +188,44 @@ lähdekoodi omalle koneelle paikallisesti ajettavaksi.
 
 ## Typografia
 
-
-
-    <div class="page" title="Page 9">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Typografia on kirjasinten, sanojen ja tekstin sommittelua visuaalisesti. Typografian
+Typografia on kirjasinten, sanojen ja tekstin sommittelua visuaalisesti. Typografian
 tarkoitus on välittää kirjoitettua kommunikaatiota halutulla tavalla. Yleensä typografian
 määritelmään kuuluu selkeyden ja luettavuuden tavoittelu. Usein typografiaa käsitellään
 vain luettavuuden työkaluna. Typografia kuitenkin kattaa koko skaalan ihmisten välistä
 kommunikaatiota ja sitä on löydettävissä kaikista visuaalisista medioista. Typografinen
 kommunikaatio voi olla faktatiedon välittämisen lisäksi tunteellista, tai mitä tahansa
-kielellistä kommunikaatiota joka halutaan esittää visuaalisesti. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Miller 99</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, 3, hakupäivä
+kielellistä kommunikaatiota joka halutaan esittää visuaalisesti. (Miller 99, 3, hakupäivä
 4.4.2014)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">“Vaikka typografia voi olla kutsumustyö, se on olennainen osa graafisen suunnittelijan
+
+“Vaikka typografia voi olla kutsumustyö, se on olennainen osa graafisen suunnittelijan
 ammattia, monet typografian työkalut ovat saatavilla lähes kaikille. Tietäväinen ja
 tunnollinen tarkkaavaisuus tarkoitukseen, muotoon ja yksityiskohtiin erottaa typografin
 pelkästään kirjasinten käyttäjästä” (sama, 3)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Typografiaa voi siis toteuttaa taiteena, piittaamatta säännöistä, mutta tehokas
+
+Typografiaa voi siis toteuttaa taiteena, piittaamatta säännöistä, mutta tehokas
 kommunikaatio perustuu historian ja sen kautta muodostuneiden sääntöjen syvään
 tuntemukseen. Typografia ei kuitenkaan ole kuin kielioppia, typografian sääntöjä ei voi
 pitää pilkuntarkkoina, vaan ne ovat enemmänkin ohjenuora, jonka pohjalta voi rakentaa
 oman tapansa kommunikoida. Tapauskohtaisen typografisen järjestelmän rakentaminen
 helpottaa typografian tuottamista.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Korostan typografian monimuotoisuutta ja historiaa selventääkseni miten tarkkaan
+
+Korostan typografian monimuotoisuutta ja historiaa selventääkseni miten tarkkaan
 rajattu tarkoitus Gridloverilla on suhteessa typografiaan yleensä. Tarkoitukseni on
 peilata Gridloverin toimintaa typografian pitkiin perinteisiin, jotta syntyisi ymmärrys
 siitä, miksi ja miten Gridloverin, sekä yleisesti selainten, typografinen kontrolli
 poikkeaa typografian perinteistä.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Toisin kuin monessa typografiaa sivumennen käsittelevässä opinnäytetyössä väitetään
+
+Toisin kuin monessa typografiaa sivumennen käsittelevässä opinnäytetyössä väitetään
 (S. Harjukelo 2013: Visuaalisen ilmeen rakentaminen, 16; H. Maatta 2011: Visuaalisen
 ilmeen ja virallisen Facebook-sivun suunnittelu ja toteutus, 12; M. Tarvainen 2011:
 Käyttäjäystävällinen blogikäyttöliittymä), kirjasimen valinta ei mielestäni ole
 yksittäinen tärkein valinta typografiaa suunnitellessa. Tekstin luettavuuteen vaikuttavat
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page9image13944" alt="page9image13944" width="44.880000" height="0.240000">
-    </div>
-    <div class="page" title="Page 10">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">monet seikat, eikä kirjasimen valintaa voi yksilöidä niistä tärkeimmäksi. Esimerkiksi jos
+monet seikat, eikä kirjasimen valintaa voi yksilöidä niistä tärkeimmäksi. Esimerkiksi jos
 rivit ovat pitkiä ja rivin korkeus olematon, on teksti lukukelvotonta riippumatta
 kirjasinvalinnasta. Kirjasimeen liittyvät valinnat ovat osa kokonaisen typografisen
 järjestelmän luontia. Gridlover on työkalu vain skaalan ja rytmin löytämiseksi.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tekstin luettavuus, rivin korkeus ja rivin pituus kulkevat käsi kädessä. Näiden
+
+Tekstin luettavuus, rivin korkeus ja rivin pituus kulkevat käsi kädessä. Näiden
 muuttujien määreisiin vaikuttavat myös fontin ominaisuudet. (Bringhurst 2012, 36)
 Esimerkiksi jos fontti on leveä ja korkea, on optimaalinen rivin pituus suurempi kuin
 kapealla fontilla ja optimaalinen rivikorkeus suurempi kuin matalalla fontilla. Koska
@@ -267,198 +233,145 @@ kirjasimen valinta usein mielletään tärkeimmäksi typografiseksi valinnaksi, 
 tekemiseen on olemassa jo runsaasti työkaluja. Gridlover keskittyy rivin korkeuden,
 rivin pituuden ja fonttikokojen ja niiden välisten suhteiden valitsemiseen, eikä sisällä
 työkaluja kirjasimen valintaan tai kirjasinten vertailuun.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tekstin tasaus on typografisesti tärkeä valinta, mutta selaimissa sen kontrollointi on
+
+Tekstin tasaus on typografisesti tärkeä valinta, mutta selaimissa sen kontrollointi on
 vielä alkeellista. Selaimissa on valittavana vasen, oikea, keskitetty ja molempiin
 reunoihin tasaus. Viimeksi mainitussa ei ole mitään yleisiä tapoja säätää tasauksen
 käyttäytymistä. Gridlover ei ota kantaa tasaukseen, enkä käsittele sitä tutkielmassa.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Typografian osasia ei voi täysin erotella toisistaan, vaan typografisessa kokonaisuudessa
+
+Typografian osasia ei voi täysin erotella toisistaan, vaan typografisessa kokonaisuudessa
 on monia palasia, jotka kaikki vaikuttavat toisiinsa. Tästä syystä on tärkeää, sekä
 haastavaa, rakentaa yhtenäinen järjestelmä jota käyttää suunnittelun perustana. Vaikka
 julkaisussa olisi valittu tietty fontti käytettäväksi läpi kaikkien sivujen, jos julkaisun
 typografiassa käytetyt mitat muuttuvat paikasta toiseen, fontin sopivuus voi vaihdella.
 Tärkeintä on että typografia tukee sisältöä, siten että sisältö ja sen esittävä typografia
 ajavat samaa viestiä.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2.1 Design järjestelmä
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Design järjestelmä tarkoittaa sisällön ulkoasua suunnitellessa valintoja, joilla luodaan
+
+### 2.1 Design järjestelmä
+
+Design järjestelmä tarkoittaa sisällön ulkoasua suunnitellessa valintoja, joilla luodaan
 optimaalinen esitystapa sisällölle. Sen osasia voi olla kirjasin, perusyksikkö, väri,
 muoto, ruudukot, taitto, fonttikoko ja rivin pituus. Näistä osasista luodaan järjestelmä,
 jota sovelletaan suunnittelussa. Kaikilla osasilla on siis jokin suhde keskenään ja
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 11">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">järjestelmässä on jokin sisällöstä lähtöisin oleva perusyksikkö. Systemaattisella
+järjestelmässä on jokin sisällöstä lähtöisin oleva perusyksikkö. Systemaattisella
 lähestymistavalla saadaan aikaan yhtenäinen ilme kautta linjan koko tuotteelle tai
-sivustolle jota ollaan tekemässä. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Kalbag 2012</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 6.4.2014)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Olen itse pitkään käyttänyt dokumentin leipätekstin rivikorkeutta käytännöllisenä
+sivustolle jota ollaan tekemässä. (Kalbag 2012, hakupäivä 6.4.2014)
+
+Olen itse pitkään käyttänyt dokumentin leipätekstin rivikorkeutta käytännöllisenä
 mittana, johon perustaa muu typografia. Tähän viitataan usein nimellä vertikaalinen
 rytmi. Valitsin Gridloverin säädettäviksi muuttujiksi fonttikoon, rivin korkeuden ja
 skaalakertoimen. Muuttujat toimivat yhdessä ja vaikuttavat toisiinsa
 esittelyjärjestyksessä.
-</span></p>
-          <ol>
-            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
-              <p><span style="font-size: 12pt;">Fonttikoko määrittää kirjainten koon. Fonttikoko on ensimmäinen asia joka
+
+Fonttikoko määrittää kirjainten koon. Fonttikoko on ensimmäinen asia joka
 vaikuttaa tekstin luettavuuteen: Liian pienellä fonttikoolla kirjaimia ei pysty
 erottelemaan toisistaan, liian suurella fonttikoolla kokonaiset sanat eivät edes
 mahdu ruudulle.
-</span></p>
-            </li>
-            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
-              <p><span style="font-size: 12pt;">Rivin korkeus on kerroin fonttikoolle. Rivin korkeudesta syntyy perusyksikkö
+
+Rivin korkeus on kerroin fonttikoolle. Rivin korkeudesta syntyy perusyksikkö
 joka toistuu kaikkialla Gridloverin avulla tuotetuissa design järjestelmissä.
-</span></p>
-            </li>
-            <li style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">
-              <p><span style="font-size: 12pt;">Skaala on kerroin, jonka mukaan otsikkotasojen fonttikoko määritetään.
+
+Skaala on kerroin, jonka mukaan otsikkotasojen fonttikoko määritetään.
 Kullekin otsikkotasolla voi valita skaalalta sijainnin. Fonttikoko skaalalla lähtee
 aluksi valitusta fonttikoosta ja suurenee eksponentiaalisesti valitun
 skaalakertoimen mukaan.
-</span></p>
-            </li>
-          </ol>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Käytännössä webissä typografinen järjestelmä toteutetaan kirjoittamalla tyylitiedosto,
+
+Käytännössä webissä typografinen järjestelmä toteutetaan kirjoittamalla tyylitiedosto,
 jossa näitä valintoja käytetään ja jonka mukaan sivuston ulkoasu määräytyy selaimessa.
 Suunnitellessa täytyy ottaa huomioon, että sivustoa saatetaan katsella millaisella
 ruudulla hyvänsä. Mahdolliset katseluympäristöt kannattaa jakaa kategorioihin ja
 muuttaa tyylejä kullekin sopivimmaksi. Kullekin katseluympäristölle kannattaa valita
 sopivin fonttikoko, rivin korkeus ja rivin pituus.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridlover ei itsessään ota kantaa katseluympäristöön, vaan toimii ympäristöstä
+
+Gridlover ei itsessään ota kantaa katseluympäristöön, vaan toimii ympäristöstä
 riippumatta. Tällöin kullekin ympäristölle sopivat tyylit voi toteuttaa ja esikatsella
 tapauskohtaisesti, ottaa tyylit talteen ja koota itse tyylitiedostoonsa kunkin ympäristön
 erilliset tyylit. Gridloverin tuottamaa tyylitiedostoa voi käyttää oman designinsa
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page11image13232" alt="page11image13232" width="61.680000" height="0.240000">
-
-    </div>
-    <div class="page" title="Page 12">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">lähtökohtana, tai suoraan sellaisenaan, jos haluaa vain visuaalisesti löytää
+lähtökohtana, tai suoraan sellaisenaan, jos haluaa vain visuaalisesti löytää
 helppolukuisimmat arvot mainituille muuttujille.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2.2 Modulaarinen skaala
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Englanniksi typografisesta sivun suunnittelusta puhuttaessa käytetään usein sanaa
+
+### 2.2 Modulaarinen skaala
+
+Englanniksi typografisesta sivun suunnittelusta puhuttaessa käytetään usein sanaa
 compose - säveltää. Tämä liittyy siihen, miten typografisten mittojen suhteiden
 määrityksiä voi verrata musiikin säveltämiseen. Bringhurst toteaa usein siteeratussa
 kirjassaan Elements of Typographic Style: “A modular scale, like a musical scale, is a
 prearranged set of harmonious proportions.” (Bringhurst 2012, 36)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Otsikkotasojen fonttikokojen perustana Gridloverissa on modulaarinen skaala.
+
+Otsikkotasojen fonttikokojen perustana Gridloverissa on modulaarinen skaala.
 Yksinkertaisimmillaan se tarkoittaa sitä, että fonttikoot lasketaan pienimmästä
 suurimpaan, kertomalla edellinen fonttikoko skaalakertoimella ja näin saadaan seuraava
 suurempi fonttikoko. Perus fonttikoosta pienemmäksi mennään jakamalla edellinen luku
 suhdeluvulla. Skaalan voi rakentaa muillakin tavoin, sen tarkoitus on jäsentää numeroita
 siten, että ne liittyvät toisiinsa jonkin merkityksellisen suhdeluvun kautta. Esimerkiksi
 kultaisen leikkauksen suhdeluku 1.618, voi olla modulaarisen skaalan perustana.
-(</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Brown 2011</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 6.4.2014)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Käyttämällä historiallisesti ja kulttuurillisesti merkityksellisiä suhdelukuja skaalan
+(Brown 2011, hakupäivä 6.4.2014)
+
+Käyttämällä historiallisesti ja kulttuurillisesti merkityksellisiä suhdelukuja skaalan
 luomiseen ja perustamalla järjestelmän arvot tähän skaalaan, voi saavuttaa visuaalisen
 harmonian, jollaista ei löydy satunnaisesti tai helpon laskettavuuden vuoksi valituilla
 arvoilla toteutetusta järjestelmästä. (sama)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Ensimmäistä kertaa Brownin artikkelin luettuani lisäsin Gridloverin käyttöliittymään
+
+Ensimmäistä kertaa Brownin artikkelin luettuani lisäsin Gridloverin käyttöliittymään
 skaalalle esivalinnat klassisten musiikillisten skaalojen mukaan. Rivin korkeus
 määritellään Gridloverissa myös suhdelukuna fontin kokoon, mutta rivin korkeudelle en
 lisännyt samoja esiasetuksia, koska rivin korkeus pyöristetään tyylitiedostoon niin
 karkeasti, että tarkat esiasetukset menettäisivät merkityksensä. Jätin kuitenkin
 mahdollisuuden syöttää numerokenttään itse niin tarkan arvon kuin haluaa.
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page12image12552" alt="page12image12552" width="59.760000" height="0.240000">
-    </div>
-    <div class="page" title="Page 13">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2.3 Kirjasintyypit
-</span></p>
-        </div>
-      </div>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kirjasintyyppien mitoissa voi olla suuriakin eroja. Mitat vaikuttavat siihen, millainen
+
+### 2.3 Kirjasintyypit
+
+Kirjasintyyppien mitoissa voi olla suuriakin eroja. Mitat vaikuttavat siihen, millainen
 fonttikoko, rivikorkeus ja rivin pituus muodostaa luettavan ja silmää miellyttävän
 kokonaisuuden. Tästä syystä fonttivalintaa ja muita mittoja ei voi pitää toisistaan
 erillisinä päätöksinä, vaan ne on sovitettava toisiinsa. (Kuvio 1)
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page13image3208" alt="page13image3208" width="425.999980" height="161.917700">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 1. Keskenään hyvin eri mittasuhteilla rakennetut kirjasintyypit, jotka on ladottu
-identtisillä asetuksilla Gridloverissa. Vasemmalla Fjalla One, oikealla Cuprum.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverissa, ja selaimissa yleensä, ei pysty vaikuttamaan kirjasimen mittoihin
+
+<img src="file:///page13image3208" alt="page13image3208" width="425.999980" height="161.917700">
+__KUVIO 1. Keskenään hyvin eri mittasuhteilla rakennetut kirjasintyypit, jotka on ladottu
+identtisillä asetuksilla Gridloverissa. Vasemmalla Fjalla One, oikealla Cuprum.__
+
+Gridloverissa, ja selaimissa yleensä, ei pysty vaikuttamaan kirjasimen mittoihin
 muutoin kuin fonttikokoa muuttamalla, eikä kirjasimien eri osien mittoja pysty
 myöskään mittamaan. Rivivälit ja marginaalit on säädettävä kohdilleen visuaalisesti,
 siihen on vaikeaa tehdä automatiikkaa.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">2.4 Vertikaalinen rytmi
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Vertikaalisen rytmin tarkoituksen voi ymmärtää musiikin kautta. Ajan ja tilan voi jakaa
+
+### 2.4 Vertikaalinen rytmi
+
+Vertikaalisen rytmin tarkoituksen voi ymmärtää musiikin kautta. Ajan ja tilan voi jakaa
 määrättömän pieniin osiin. Musiikillinen harmonia perustuu ajan jakamiseen toisiinsa
 suhteessa oleviin osiin. Musiikissa on siis rytmi, jonka avulla sitä seurataan. Rytmi voi
 koostua eri mittaisista osista, tai poiketa välillä harmoniasta, mutta sen on aina
 pohjauduttava johonkin. Samaa voi soveltaa tilan jakamisessa ja typografiassa.
 Kirjaimet muodostavat vaakasuuntaisen rytmin täyttämällä valitun mittaisia rivejä.
 Pystysuunnassa rytmin perustana on riviväli. (Bringhurst 2012, 36)
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 14">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Sopivan rivivälin löytäminen on avainvalinta hyvään koko sivun läpi toimivaan rytmiin.
+
+Sopivan rivivälin löytäminen on avainvalinta hyvään koko sivun läpi toimivaan rytmiin.
 Kun sopiva rytmi on löytynyt, sitä ja sen kerrannaisia voi käyttää esimerkiksi otsikoissa,
 sivuhuomautuksissa ja leipätekstissä siten että rytmi nappaa lukijan mukaansa ja ohjaa
-häntä sivulla eteenpäin. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Rutter 2006</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 7.4.2014)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Web-sivustoja tehdessä, vertikaalisessa rytmissä pysymiseen voi vaikuttaa monta
+häntä sivulla eteenpäin. (Rutter 2006, hakupäivä 7.4.2014)
+
+Web-sivustoja tehdessä, vertikaalisessa rytmissä pysymiseen voi vaikuttaa monta
 tekijää: kirjasinten korkeus (fonttikoko), rivikorkeus ja elementtien pystysuuntaiset
 välistykset, sekä reunukset. Kaikki nämä on laskettava tarkkaan, jotta rytmi säilyisi läpi
 sivun. (sama)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Historiallisesti printtisuunnittelussa pystysuuntaista rytmiä on muokattu lisäämällä tilaa
+
+Historiallisesti printtisuunnittelussa pystysuuntaista rytmiä on muokattu lisäämällä tilaa
 rivien väliin, tällöin puhutaan rivivälistä. Riviväli koostuu fontin koosta ja rivien väliin
 lisättävästä tilasta. Selaimet poikkeavat perinteisestä typografiasta rivien ulottuvuuksien
 määrityksessä. Webissä selaimet toimivat siten, että kirjaimet asetetaan pystysuunnassa
 rivin keskelle. (Kuvio 2, oikea puoli) Rivien välissä ei ole normaalisti laisinkaan tyhjää
 tilaa.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 2. Fontin pystysuuntainen sijoittelu. Vasemmalla kuvankaappaus
-Photoshopista, oikealla kuvankaappaus Google Chromesta.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kun riviväli määritellään lisäämällä tyhjää tilaa rivien väliin, pystytään helposti
+
+__KUVIO 2. Fontin pystysuuntainen sijoittelu. Vasemmalla kuvankaappaus
+Photoshopista, oikealla kuvankaappaus Google Chromesta.__
+
+Kun riviväli määritellään lisäämällä tyhjää tilaa rivien väliin, pystytään helposti
 pitämään rytmi sellaisena, että kirjasinten alapuolet osuvat rytmin määrittelemille
 viivoille, jolloin rytmi on yleensä hyvin havaittavissa visuaalisesti. (Kuvio 2, vasen
 puoli) Selaimissa rytmi ei välttämättä aina ole yhtä eksplisiittisesti esillä, vaikka tyyli
 perustuisi printtiversiota vastaavaan vakiomittaiseen rytmiin.
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page14image10608" alt="page14image10608" width="56.880000" height="0.240000">
-      <img src="file:///page14image10768" alt="page14image10768" width="425.999980" height="123.000000">
-    </div>
-    <div class="page" title="Page 15">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Perinteisesti printissä taittaja määrittelee mitat käsin sen jälkeen kun on saanut sisältöä
+
+Perinteisesti printissä taittaja määrittelee mitat käsin sen jälkeen kun on saanut sisältöä
 taitettavaksi. Webissä esimerkiksi sosiaalisen sivuston, tai blogin tyylejä määritellessä,
 ei etukäteen välttämättä tiedetä mitä sisältöä sivustolle tulee. Lukuisat eri päätelaitteet
 myös vähentävät ennakoinnin mahdollisuutta. Käytännössä siis webissä esimerkiksi
@@ -467,29 +380,18 @@ käsin enää siinä vaiheessa, kun jokin lukulaite tuottaa otsikon ruudulle. T�
 rivimäärän ja mittojen on oltava sellaisia, että rytmi säilyy riippumatta rivityksistä.
 (Kuvio 2, oikea puoli) Gridloverissa rytmin varma jatkuvuus toteutetaan pitämällä
 kaikki pystysuuntaiset mitat perus rivivälin kerrannaisina.
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 16">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">3 Teknologia
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page16image880" alt="page16image880" width="425.999980" height="140.956300">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 3. Gridloverin teknologian osa-alueiden hierarkia
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kuvio 3 havainnollistaa Gridloverin teknologiahierarkian. Tässä kappaleessa käsittelen
+
+## 3 Teknologia
+
+__KUVIO 3. Gridloverin teknologian osa-alueiden hierarkia__
+
+Kuvio 3 havainnollistaa Gridloverin teknologiahierarkian. Tässä kappaleessa käsittelen
 kaikkia muita, paitsi Javascriptiä. Javascript on ohjelmointikieli jolla sovellukset
 selaimissa toteutetaan. Javascript ei kuitenkaan liity suoraan typografiaan tai sen
 laskentaan mitenkään, joten se on rajattu tutkielman ulkopuolelle. Laskenta-kappaleessa
 käyn läpi typografiaan liittyvän matematiikan jota Gridloverin Javascript käyttää.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin päänäkymä on esikatselu sille, miten käyttäjän valitsemien arvojen pohjalta
+
+Gridloverin päänäkymä on esikatselu sille, miten käyttäjän valitsemien arvojen pohjalta
 laskettu Gridloverin tuottama CSS-koodi vaikuttaa esikatselussa näytettävään web-
 sivuun. Esikatselun sisältöä voi muokata kirjoittamalla Markdown-muotoista tekstiä
 sisällön muokkauspaneeliin. Markdown muunnetaan HTML:ksi ja selain näyttää sen
@@ -501,30 +403,21 @@ muutakin, jota vaaditaan kokonaisuuden toimimiseen. Esimerkiksi käyttäjän val
 ja sisällön tallentamisen välimuistiin, jotta ne eivät katoa kun sivu suljetaan ja ladataan
 uudestaan. Sovelluslogiikkaan liittyvät puolet toteutuksesta eivät kuitenkaan suoraan
 liity typografiaan, joten ne on rajattu tutkielman ulkopuolelle.
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 17">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">3.1 HTML
-</span></p>
-        </div>
-      </div>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">HTML (Hypertext Markup Language) on merkkauskieli jolla kuvataan web-
+
+### 3.1 HTML
+
+HTML (Hypertext Markup Language) on merkkauskieli jolla kuvataan web-
 dokumenttien sisältöjä. HTML koostuu elementeistä, jotka merkataan dokumenttiin
 tagipareilla. Esimerkiksi ylimmän tason otsikko merkataan seuraavanlaisesti:
-</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">&lt;h1&gt;Otsikko&lt;/h1&gt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Web Platform Docs: Basic of HTML</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 10.4.2014)
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">KUVIO 4. Yksinkertainen HTML rakenne
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverin ja CSS-typografian kannalta tärkeintä on ymmärtää että HTML on
+
+<span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">&lt;h1&gt;Otsikko&lt;/h1&gt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">. (</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">Web Platform Docs: Basic of HTML</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, hakupäivä 10.4.2014)
+
+__KUVIO 4. Yksinkertainen HTML rakenne__
+
+Gridloverin ja CSS-typografian kannalta tärkeintä on ymmärtää että HTML on
 puurakenne, jossa on sisäkkäisiä elementtejä. Kuvio 4 havainnollistaa termit
 juurielementti, lapsielementti ja isäntäelementti. Juurielementti on sisäkkäisessä
-rakenteessa ylimmän tason elementti, juurielementtinä on aina </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">.
+rakenteessa ylimmän tason elementti, juurielementtinä on aina <span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">.
 Esimerkkikoodissa </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">on </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin lapsi. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">p </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ovat </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin
 lapsia. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">taas on </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">h1 </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">p </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementtien isäntäelementti ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">html </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">on </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">body </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin
 isäntäelementti.
