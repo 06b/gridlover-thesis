@@ -2,16 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <link rel="stylesheet" href="">
+  <title>Gridlover (markdown)</title>
+  <link rel="stylesheet" href="gridlover.css">
   <script src="markel.js"></script>
+  <style>
+    body {
+      font-family: 'Source Sans Pro', serif;
+    }
+    img {
+      max-width: 100%;
+    }
+  </style>
 </head>
 <body>
 
-  <div data-markdown>
-
-_Ville Vanninen_
+<div data-markdown>
 
 #Gridlover
 
@@ -23,7 +28,7 @@ Kevät 2014<br>
 Kuvallinen viestintä<br>
 Oulun ammattikorkeakoulu<br>
 Työn ohjaaja: Tuukka Uusitalo<br>
-Kiitokset: Heli, Veikko, Karo, Kati
+Kiitokset: Heli Huttunen, Veikko Mynttinen, Karoliina Niemelä, Kati Koivupalo, Tuomas Jomppanen
 
 
 ## Tiivistelmä
@@ -52,11 +57,6 @@ kehittämiseen.
 
 Asiasanat: Typografia, web design, css, www-sivut
 
-<img src="file:///page3image10984" alt="page3image10984" width="428.400000" height="0.480000">
-<img src="file:///page3image11144" alt="page3image11144" width="428.400000" height="0.480000">
-<img src="file:///page3image11304" alt="page3image11304" width="428.400000" height="0.480000">
-
-
 ## Abstract
 
 My thesis examines building a typographic system for use in web projects,
@@ -80,10 +80,6 @@ explained. The study can be used for deeper understanding of web typography,
 or even as base knowlegde for developing a new typographic application.
 
 Keywords: Typography, web design, css, web-sites
-
-<img src="file:///page4image13552" alt="page4image13552" width="428.400000" height="0.480000">
-<img src="file:///page4image13712" alt="page4image13712" width="428.400000" height="0.480000">
-<img src="file:///page4image13872" alt="page4image13872" width="428.400000" height="0.480000">
 
 
 ## Sisällys
@@ -184,7 +180,6 @@ lisäämään tekstiliitteenä tulostettuun tutkielmaan, eikä sovellus toimi er
 tiedostona ilman web-palvelinta, joten se on avattava web-osoitteesta tai ladattava
 lähdekoodi omalle koneelle paikallisesti ajettavaksi.
 
-<img src="file:///page8image11928" alt="page8image11928" width="90.240000" height="0.240000">
 
 ## Typografia
 
@@ -326,9 +321,9 @@ fonttikoko, rivikorkeus ja rivin pituus muodostaa luettavan ja silmää miellytt
 kokonaisuuden. Tästä syystä fonttivalintaa ja muita mittoja ei voi pitää toisistaan
 erillisinä päätöksinä, vaan ne on sovitettava toisiinsa. (Kuvio 1)
 
-<img src="file:///page13image3208" alt="page13image3208" width="425.999980" height="161.917700">
-__KUVIO 1. Keskenään hyvin eri mittasuhteilla rakennetut kirjasintyypit, jotka on ladottu
-identtisillä asetuksilla Gridloverissa. Vasemmalla Fjalla One, oikealla Cuprum.__
+<img src="images/fonttimetriikka-esimerkki.jpg" alt=""><br>
+_KUVIO 1. Keskenään hyvin eri mittasuhteilla rakennetut kirjasintyypit, jotka on ladottu
+identtisillä asetuksilla Gridloverissa. Vasemmalla Fjalla One, oikealla Cuprum._
 
 Gridloverissa, ja selaimissa yleensä, ei pysty vaikuttamaan kirjasimen mittoihin
 muutoin kuin fonttikokoa muuttamalla, eikä kirjasimien eri osien mittoja pysty
@@ -362,8 +357,9 @@ määrityksessä. Webissä selaimet toimivat siten, että kirjaimet asetetaan py
 rivin keskelle. (Kuvio 2, oikea puoli) Rivien välissä ei ole normaalisti laisinkaan tyhjää
 tilaa.
 
-__KUVIO 2. Fontin pystysuuntainen sijoittelu. Vasemmalla kuvankaappaus
-Photoshopista, oikealla kuvankaappaus Google Chromesta.__
+<img src="images/browser-vs-photoshop.jpg" alt=""><br>
+_KUVIO 2. Fontin pystysuuntainen sijoittelu. Vasemmalla kuvankaappaus
+Photoshopista, oikealla kuvankaappaus Google Chromesta._
 
 Kun riviväli määritellään lisäämällä tyhjää tilaa rivien väliin, pystytään helposti
 pitämään rytmi sellaisena, että kirjasinten alapuolet osuvat rytmin määrittelemille
@@ -383,7 +379,8 @@ kaikki pystysuuntaiset mitat perus rivivälin kerrannaisina.
 
 ## 3 Teknologia
 
-__KUVIO 3. Gridloverin teknologian osa-alueiden hierarkia__
+<img src="images/teknologia-hierarkia.jpg" alt=""><br>
+_KUVIO 3. Gridloverin teknologian osa-alueiden hierarkia_
 
 Kuvio 3 havainnollistaa Gridloverin teknologiahierarkian. Tässä kappaleessa käsittelen
 kaikkia muita, paitsi Javascriptiä. Javascript on ohjelmointikieli jolla sovellukset
@@ -411,7 +408,8 @@ dokumenttien sisältöjä. HTML koostuu elementeistä, jotka merkataan dokumentt
 tagipareilla. Esimerkiksi ylimmän tason otsikko merkataan seuraavanlaisesti:
 `<h1>Otsikko</h1>`. (Web Platform Docs: Basic of HTML, hakupäivä 10.4.2014)
 
-__KUVIO 4. Yksinkertainen HTML rakenne__
+<img src="images/html-sample.jpg" alt=""><br>
+_KUVIO 4. Yksinkertainen HTML rakenne_
 
 Gridloverin ja CSS-typografian kannalta tärkeintä on ymmärtää että HTML on
 puurakenne, jossa on sisäkkäisiä elementtejä. Kuvio 4 havainnollistaa termit
@@ -430,7 +428,8 @@ suoraan selaimiin kelpaavaksi HTML-koodiksi nopeasti ja varmatoimisesti.
 Markdownin syntaksin tärkein tavoite on olla mahdollisimman helppolukuista, mutta
 mahdollistaa silti dokumentin rakenteen määrittely. (Gruber 2004, hakupäivä 12.6.2014)
 
-__KUVIO 5. Markdown esimerkki__
+<img src="images/markdown-esimerkki.jpg" alt=""><br>
+_KUVIO 5. Markdown esimerkki_
 
 Markdown-tekstiä (Kuvio 5) voi lähettää sellaisenaan vaikkapa sähköpostissa, sen
 ollessa silti täysin kenen tahansa ymmärrettävissä. HTML-koodin tagimääreet taas
@@ -487,7 +486,8 @@ Kuvio 6 havainnollistaa koodiesimerkissä CSS:n pääasialliset osat. Näitä os
 muokkaamalla ja uudelleen järjestämällä pystyy jo luomaan omat tyylinsä jotka
 perustuvat Gridloverin antamiin mittoihin.
 
-__KUVIO 6. CSS-koodin pääasialliset osat__
+<img src="images/css-esimerkki.jpg" alt=""><br>
+_KUVIO 6. CSS-koodin pääasialliset osat_
 
 Valitsimella kerrotaan mihin HTML-elementtiin tai -elementteihin sääntö tulee
 kohdistaa. Valitsimet voivat olla monimutkaisia ja sisältää ehtoja sille, mihin niiden
@@ -542,79 +542,79 @@ eri laitteilla. Fyysiset mitat toimivat luotettavasti CSS:ssä vain printatussa 
 (sama)
 
 <table>
-  <tbody>
-    <tr>
-      <td>
-      Yksikkö
-      </td>
-      <td>
-        Laskentasuhde
-      </td>
-      <td>
-        Fonttikoko
-      </td>
-      <td>
-        Rivikorkeus
-      </td>
-      <td>
-        Marginaalit
-      </td>
-    </tr>
-    <tr>
-      <td>
-        px
-      </td>
-      <td>
-        absoluuttinen
-      </td>
-      <td>
-        absoluuttinen
-      </td>
-      <td>
-        absoluuttinen
-      </td>
-      <td>
-        absoluuttinen
-      </td>
-    </tr>
-    <tr>
-      <td>
-        em
-      </td>
-      <td>
-        kerroin fonttikoolle
-      </td>
-      <td>
-        kerroin isäntäelementin fonttikoolle
-      </td>
-      <td>
-        kerroin elementin fonttikoolle
-      </td>
-      <td>
-        kerroin elementin fonttikoolle
-      </td>
-    </tr>
-    <tr>
-      <td>
-        rem
-      </td>
-      <td>
-        kerroin juurifonttikoolle
-      </td>
-      <td>
-        =
-      </td>
-      <td>
-        =
-      </td>
-      <td>
-        =
-      </td>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<td>
+Yksikkö
+</td>
+<td>
+Laskentasuhde
+</td>
+<td>
+Fonttikoko
+</td>
+<td>
+Rivikorkeus
+</td>
+<td>
+Marginaalit
+</td>
+</tr>
+<tr>
+<td>
+px
+</td>
+<td>
+absoluuttinen
+</td>
+<td>
+absoluuttinen
+</td>
+<td>
+absoluuttinen
+</td>
+<td>
+absoluuttinen
+</td>
+</tr>
+<tr>
+<td>
+em
+</td>
+<td>
+kerroin fonttikoolle
+</td>
+<td>
+kerroin isäntäelementin fonttikoolle
+</td>
+<td>
+kerroin elementin fonttikoolle
+</td>
+<td>
+kerroin elementin fonttikoolle
+</td>
+</tr>
+<tr>
+<td>
+rem
+</td>
+<td>
+kerroin juurifonttikoolle
+</td>
+<td>
+=
+</td>
+<td>
+=
+</td>
+<td>
+=
+</td>
+</tr>
+</tbody>
 </table>
 
-__TAULUKKO 1. Mittayksiköiden suhteellisuus__
+_TAULUKKO 1. Mittayksiköiden suhteellisuus_
 
 Taulukossa 1 listaan mihin suhteutettuna selaimet laskevat kullekin Gridloverissa
 käytössä olevalle yksikölle lopullisen koon pikseleinä. Kuten taulukosta voi päätellä,
@@ -639,7 +639,7 @@ kertautuu aina isäntäelementin fonttikoon mukaan. Lukua, johon suhteessa em-yk
 lasketaan kutsutaan kontekstiksi. Yleinen kaava em-yksiköiden laskennalle suhteessa
 pikseleihin on:
 
-pikselimitta = em-mitta × konteksti
+`pikselimitta = em-mitta × konteksti`
 
 Seuraavassa kuvassa (Kuvio 7) on havainnollistettuna em-laskenta sisäkkäisten
 elementtien fonttikokoille ja rivikorkeuksille. Tummennetut, numeroidut kuplat
@@ -650,7 +650,8 @@ laskutoimitus jonka perusteella lopullinen pikseliarvo syntyy. Oikealla on lopul
 selaimen käyttämä pikseliarvo. Numeroarvoina on käytetty Gridloverissa käytettäviä
 oletusarvoja.
 
-__KUVIO 7. Esimerkki em-laskennasta pikseleiksi__
+<img src="images/em-laskenta.jpg" alt=""><br>
+_KUVIO 7. Esimerkki em-laskennasta pikseleiksi_
 
 Rem (root em) on samalla tavoin suhteellinen yksikkö kuin em, mutta sen arvo on
 sidottu aina juurielementin (`html`) fonttikokoon. Eli jos elementin rivikorkeudeksi
@@ -677,7 +678,8 @@ manipuloitava asia on typografiset lähtöarvot, sekä CSS-koodi joka vaikuttaa
 esikatseluun. Gridloverissa siis tarkastellaan reaaliajassa miten muokatut arvot
 muuttavat haluttua lopputulosta.
 
-__KUVIO 8. Gridloverin käyttöliittymän osat numeroituna__
+<img src="images/käyttöliittymä.jpg" alt=""><br>
+_KUVIO 8. Gridloverin käyttöliittymän osat numeroituna_
 
 ### Fonttikoko (Kuvio 8, merkattu numerolla 1)
 
@@ -782,7 +784,8 @@ Gridloverissa olevia oletusarvoja.
 
 ### 5.1 Skaala
 
-__KUVIO 9. Esimerkkiskaala__
+<img src="images/skaala-laskenta-chart.jpg" alt=""><br>
+_KUVIO 9. Esimerkkiskaala_
 
 Kuviossa 9 on havainnollistettuna miten sijainti skaalalla, lasketut fonttikoot ja
 otsikoiden visuaalinen koko liittyvät toisiinsa, kun käytetään Gridloverin oletusarvoja.
@@ -881,15 +884,17 @@ aikaisemmasta pikselilaskennasta, että halutulla rivikorkeudella 1.4, rivikorke
 tulee pikseleinä 26.6 px, joka on pyöristettynä 27 px. Tällä tiedolla voimme laskea
 halutusta lopputuloksesta rytmin yksikön em-mittana. Tässä tapauksessa:
 
-`27 px = 19 px × rytmin yksikkö × 1 / 1.1875 em`
-`rytmin yksikkö = 1 / (19 px / 27 px × 1 / 1.1875 em)`
-`rytmin yksikkö = 1.6875 em`
+```
+27 px = 19 px × rytmin yksikkö × 1 / 1.1875 em
+rytmin yksikkö = 1 / (19 px / 27 px × 1 / 1.1875 em)
+rytmin yksikkö = 1.6875 em
+```
 
 Koska rivikorkeus em-yksiköissä lasketaan aina kyseisen elementin fonttikoon
 mukaisessa kontekstissa, eikä siis samassa kontekstissa kuin fonttikoko itsessään, on
 tehtävä vielä yksi kontekstilaskenta jotta mitta olisi suhteessa elementin fonttikokoon:
 
-`1.4210526316 em = 1.6875 em × 1 / 1.1875
+`1.4210526316 em = 1.6875 em × 1 / 1.1875`
 
 Saatua arvoa on nyt turvallista kertoa kokonaisluvuilla siten, että lopputulos on aina
 kokonaisia pikseleitä, jolloin rytmi säilyy tarkkana kautta sivun.
@@ -922,7 +927,8 @@ Esimerkiksi `p`-elementin alamarginaali:
 
 ### 6.1 Luhistuvat marginaalit
 
-__KUVIO 10. Luhistuvat marginaalit otsikon ja tekstikappaleen välillä__
+<img src="images/margin-collapse.png" alt=""><br>
+_KUVIO 10. Luhistuvat marginaalit otsikon ja tekstikappaleen välillä_
 
 CSS-taiton erikoisuus marginaalien suhteen on, että ne luhistuvat. Tämä tarkoittaa sitä
 että kahden pystysuunnassa peräkkäisen elementin väliin jäävä tila on vain näistä
@@ -948,8 +954,9 @@ päänvaivaa.
 
 ### 6.2 Jalkalinjan tasaus rytmiin
 
-__KUVIO 11. Oikealla esikatselu oletusarvoilla, keskellä esikatselu jalkalinjan
-tasauksella, oikealla, sinisellä merkattuna, CSS-lisäykset joilla kohdistus toteutetaan.__
+<img src="images/baseline-alignment.jpg" alt=""><br>
+_KUVIO 11. Oikealla esikatselu oletusarvoilla, keskellä esikatselu jalkalinjan
+tasauksella, oikealla, sinisellä merkattuna, CSS-lisäykset joilla kohdistus toteutetaan._
 
 Kuten Typografia -kappaleessa kerrotaan, selaimet tasaavat kirjaimet rivivälin keskelle.
 Jos rytmin näkyvyyttä sivulla halutaan korostaa, kirjainten jalkalinjat voi tasata rytmin
@@ -975,7 +982,8 @@ itse, kun tyylit on viety Gridloverista omaan projektiin.
 
 ### 6.3 Rivikorkeuteen vaikuttavat elementit
 
-__KUVIO 12. Rivikorkeuteen vaikuttavat elementit. Vasemmalla normaali rytmi, keskellä `small`-elementti, oikealla `sub` ja `sup`-elementit.__
+<img src="images/sanitation-element.jpg" alt=""><br>
+_KUVIO 12. Rivikorkeuteen vaikuttavat elementit. Vasemmalla normaali rytmi, keskellä `small`-elementti, oikealla `sub` ja `sup`-elementit._
 
 Joillakin elementeillä on selaimen oletustyyleillä vaikutus rivin korkeuteen. Näistä
 yleisimmät ovat `small`, `sup` ja `sub`-elementit. (Kuvio 12) Myös `code` ja `b`-
@@ -1351,6 +1359,8 @@ Harjukelo S. 2013. Visuaalisen ilmeen rakentaminen.
 
 Maatta H. 2011. Visuaalisen ilmeen ja virallisen Facebook-sivun suunnittelu ja toteutus.
 Tarvainen M. 2011. Käyttäjäystävällinen blogikäyttöliittymä.
+
+</div>
 
 </body>
 </html>
