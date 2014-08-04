@@ -798,12 +798,12 @@ luvut.
 Skaalattu fonttikoko saadaan, kun fonttikoko, jonka pohjalta skaalaa lähdetään
 laskemaan, kerrotaan skaalakertoimella skaalasijainnin mukaan:
 
-__`skaalattu koko = perusfonttikoko × skaalakerroin ^ skaalasijainti`__
+`skaalattu koko = perusfonttikoko × skaalakerroin ^ skaalasijainti`
 
 Gridloverin oletus perusfonttikoolla (19 px), suurimman otsikon (`h1`-elementti) koko
 lasketaan näin:
 
-__`110.808 px = 19 px × 1.8 ^ 3`__
+`110.808 px = 19 px × 1.8 ^ 3`
 
 Kun luku pyöristetään kokonaisiksi pikseleiksi, saadaan lopullinen koko, 111 px. Luvun
 voi halutessaan jättää pyöristämättömäksi, sillä selaimet pyöristävät desimaaleina
@@ -819,14 +819,14 @@ Gridloverin on kuitenkin tarkoitus tuottaa mahdollisimman vähän CSS-koodia. Ko
 on tarkoitus olla mahdollisimman yleispätevää, joten se ei määritä `html`-elementille
 fonttikokoa. Konteksti lasketaan kaavaan mukaan seuraavalla tavalla:
 
-__`skaalattu koko = perusfonttikoko × skaalakerroin ^ skaalasijainti × 1 / konteksti`__
+`skaalattu koko = perusfonttikoko × skaalakerroin ^ skaalasijainti × 1 / konteksti`
 
 Koska otsikkoelementit sijaitsevat aina `body`-elementin lapsielementteinä, niillä
 kontekstina on `body`-elementille annettu fonttikoko. Gridloverissa tämä on 19 px.
 Aikaisemmin pikseleinä laskettu suurimman otsikon (`h1`-elementti) koko lasketaan em
 yksiköillä näin:
 
-__`5.832 em = 1.1875 em × 1.8 ^ 3 × 1 / 1.1875
+`5.832 em = 1.1875 em × 1.8 ^ 3 × 1 / 1.1875`
 
 Laskelmat toistetaan jokaiselle otsikkokoolle. Näin saadaan `h2`-elementille
 skaalasijainnilla 2 fonttikooksi 64 px, `h3`-elementille skaalasijainnilla 1 fonttikooksi 34
@@ -839,13 +839,13 @@ Gridloverissa rytmi on aina perusrivikorkeus pikseleiksi pyöristettynä. Se las
 suoraan kertomalla perusfonttikoko perusrivikorkeudella ja pyöristämällä tulos
 kokonaisiksi pikseleiksi.
 
-__`rytmin yksikkö ≈ perusfonttikoko × perusrivikorkeus`__
+`rytmin yksikkö ≈ perusfonttikoko × perusrivikorkeus`
 
 Gridloverin oletus perusrivikorkeudella (1.4), leipätekstin (`body`-elementti) koko
 lasketaan näin:
 
-__`26.6 px = 19 px × 1.4`__
-__`27 px ≈ 26.6 px`__
+`26.6 px = 19 px × 1.4`
+`27 px ≈ 26.6 px`
 
 Kun elementin fonttikoko ylittää rivikorkeuden, sovitetaan kyseisen elementin
 rivikorkeus olemaan pienin mahdollinen kerrannainen perusrivikorkeudesta, johon
@@ -854,17 +854,17 @@ fonttikoko tarvitsee, jotta rytmi pysyy ennallaan, eikä suurikokoinen teksti me
 pystysuunnassa päällekkäin. Laskenta tapahtuu seuraavalla kaavalla. (Huomioi
 jakolaskun ympärillä oleva ceiling funktio.)
 
-__`elementin rivikorkeus = rytmin yksikkö × ⌈skaalattu fonttikoko / rytmin yksikkö⌉`__
+`elementin rivikorkeus = rytmin yksikkö × ⌈skaalattu fonttikoko / rytmin yksikkö⌉`
 
 Gridloverin oletusarvoilla (27 px rytmi), `h1`-elementin (111 px fonttikoko) rivikorkeus
 lasketaan näin:
 
-__`135 px = 27 px × ⌈111 px / 27 px⌉`__
+`135 px = 27 px × ⌈111 px / 27 px⌉`
 
 Absoluuttisilla yksiköillä (px ja rem) rivin laskeminen on hyvin suoraviivaista, mutta
 em-yksiköillä on jälleen otettava huomioon konteksti. Lasketaan ensin rytmin yksikkö:
 
-__`1.4 = 1.1875 em × 1.4 × 1 / 1.1875`__
+`1.4 = 1.1875 em × 1.4 × 1 / 1.1875`
 
 Koska em-yksiköt ovat fonttikoon kerrannaisia, ylempänä määritetty rytmin yksikön
 laskukaava tuottaa perusrivikorkeuden arvon. Tämä arvo täytyy kuitenkin pyöristää
@@ -873,7 +873,7 @@ montako riviä otsikkotason fonttikoot tarvitsevat, voi tulokseksi tulla piksele
 muunnettuna jotain muuta kuin aikaisemmin lasketun 27 px arvon kerrannaisia.
 Tarvitun arvon voimme selvittää seuraavalla kaavalla.
 
-__`kohdemitta = fonttikoko × rytmin yksikkö × 1 / konteksti`__
+`kohdemitta = fonttikoko × rytmin yksikkö × 1 / konteksti`
 
 Tiedämme että selaimen oletusfonttikoko on 16 px ja `body`-elementtimme fonttikoko
 on 1.1875 em, tai 19 px, kuten perusfonttikooksi on määritelty. Tiedämme myös
@@ -881,15 +881,15 @@ aikaisemmasta pikselilaskennasta, että halutulla rivikorkeudella 1.4, rivikorke
 tulee pikseleinä 26.6 px, joka on pyöristettynä 27 px. Tällä tiedolla voimme laskea
 halutusta lopputuloksesta rytmin yksikön em-mittana. Tässä tapauksessa:
 
-__`27 px = 19 px × rytmin yksikkö × 1 / 1.1875 em`__
-__`rytmin yksikkö = 1 / (19 px / 27 px × 1 / 1.1875 em)`__
-__`rytmin yksikkö = 1.6875 em`__
+`27 px = 19 px × rytmin yksikkö × 1 / 1.1875 em`
+`rytmin yksikkö = 1 / (19 px / 27 px × 1 / 1.1875 em)`
+`rytmin yksikkö = 1.6875 em`
 
 Koska rivikorkeus em-yksiköissä lasketaan aina kyseisen elementin fonttikoon
 mukaisessa kontekstissa, eikä siis samassa kontekstissa kuin fonttikoko itsessään, on
 tehtävä vielä yksi kontekstilaskenta jotta mitta olisi suhteessa elementin fonttikokoon:
 
-__`1.4210526316 em = 1.6875 em × 1 / 1.1875
+`1.4210526316 em = 1.6875 em × 1 / 1.1875
 
 Saatua arvoa on nyt turvallista kertoa kokonaisluvuilla siten, että lopputulos on aina
 kokonaisia pikseleitä, jolloin rytmi säilyy tarkkana kautta sivun.
@@ -910,13 +910,13 @@ Pikseleinä laskettaessa tämä on jälleen hyvin suoraviivaista. Kun halutaan e
 kahden rytmin yksikön mittainen marginaali, kerrotaan rytmin yksikkö kahdella.
 Esimerkiksi `h1`-elementin ylämarginaali:
 
-__`27 px × 2 = 54 px`__
+`27 px × 2 = 54 px`
 
 Koska aikaisemmassa rytmin yksikön laskennassa otettiin jo huomioon konteksti, myös
 em-yksiköillä marginaalit voidaan kertoa suoraan halutulla rytmin kerrannaisella.
 Esimerkiksi `p`-elementin alamarginaali:
 
-__`1.4210526316 em × 2 = 2.8421052632 em`__
+`1.4210526316 em × 2 = 2.8421052632 em`
 
 ## 6 Ongelmia ja ratkaisuja
 
@@ -965,7 +965,7 @@ toteutustapa näkyy kuviossa 11 oikealla.
 CSS-määre `position: relative;` mahdollistaa elementin liikuttamisen siten, että
 sijainnin muutos ei vaikuta muihin elementteihin. Eli muut osat dokumentista
 käyttäytyvät kuin elementin paikkaa ei olisi liikutettu laisinkaan. Määreellä `top:
-<pituus>;` kerrotaan elementille kuinka paljon sijaintia tulee muuttaa, suhteessa
+pituus;` kerrotaan elementille kuinka paljon sijaintia tulee muuttaa, suhteessa
 elementin ylälaitaan. (W3C CSS 2.1 Specification: Relative positioning 2011,
 hakupäivä 5.5.2014)
 
@@ -986,748 +986,371 @@ testattava, säilyykö rytmi kohdallaan kautta sivun.
 
 `small`-elementti saa selaimissa oletuksena tyyliksi pienemmän fonttikoon, mutta
 toisin kuin voisi olettaa, suurentaa rivin korkeutta, jolla sijaitsee. (Kuvio 12, keskellä)
+Elementin vaikutus rivikorkeuteen poistetaan Gridloverin CSS-koodissa määreellä `line-height: 0;`
 
-Elementin vaikutus rivikorkeuteen poistetaan Gridloverin CSS-koodissa määreellä
-</span></p>
-          <pre><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">line-height: 0;
-</span></pre>
-          <p><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sup </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sub </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementit merkkaavat ylä- ja alaindeksiä. Ne saavat oletusarvoisesti
-selaimissa määreet </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">vertical-align: superscript; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">tai </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">vertical-align:
-subscript; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Nämä määreet määrittävät miten elementti sijoitetaan rivillä suhteessa
+`sup` ja `sub` -elementit merkkaavat ylä- ja alaindeksiä. Ne saavat oletusarvoisesti
+selaimissa määreet `vertical-align: superscript;` tai `vertical-align: subscript;`
+Nämä määreet määrittävät miten elementti sijoitetaan rivillä suhteessa
 muuhun tekstiin. Selaimet laajentavat riviä näissä tapauksissa, varmistaakseen että ylä-
 ja alaindeksissä olevat tekstit eivät menisi päällekkäin muiden rivien tekstien kanssa
 missään tapauksissa. (Kuvio 12, oikealla) Tämä rytmin rikkova tyyli korjataan
-Gridloverissa määreellä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">vertical-align: baseline; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">jolloin elementit tasataan
+Gridloverissa määreellä `vertical-align: baseline;` jolloin elementit tasataan
 pystysuunnassa rivin jalkalinjaan. Haluttu ylä- ja alaindeksiefekti elementeille annetaan
-edellisessä kappaleessa läpi käydyllä tekniikalla jalkalinjan tasaukseen. Sopivat </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">top </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-
-määreen arvot vaihtelevat fonteittain, mutta yleisesti hyväksytyt arvot ovat </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sup </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-
-elementille </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">top: -0.5em; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ja </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">sub </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementille </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">bottom: -0.25em; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">(</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">HTML5
-Boilerplate </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">2014, hakupäivä 4.5.2014) Elementit tarvitsevat myös </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">line-height:
-0; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">määreen, koska niiden fonttikoko on normaalia pienempi ja ne saattavat aiheuttaa
-saman vaikutuksen rytmiin kuin </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">small </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">code</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">b</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, sekä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">strong </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementit voivat myös joissain tapauksissa vaikuttaa
-rivikorkeuteen, joten niille annetaan määre </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">line-height: 0;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Mikä tahansa elementti, jolla on reunus, vaikuttaa rivikorkeuteen. Reunusta ei piirretä
+edellisessä kappaleessa läpi käydyllä tekniikalla jalkalinjan tasaukseen. Sopivat `top`-määreen
+arvot vaihtelevat fonteittain, mutta yleisesti hyväksytyt arvot ovat `sup`-elementille
+`top: -0.5em;` ja `sub`-elementille `bottom: -0.25em;` (HTML5 Boilerplate 2014, hakupäivä 4.5.2014)
+Elementit tarvitsevat myös `line-height: 0;` määreen, koska niiden fonttikoko on normaalia pienempi
+ja ne saattavat aiheuttaa saman vaikutuksen rytmiin kuin `small`-elementti.
+`code`, `b`, sekä `strong` -elementit voivat myös joissain tapauksissa vaikuttaa
+rivikorkeuteen, joten niille annetaan määre line-height: 0;
+
+Mikä tahansa elementti, jolla on reunus, vaikuttaa rivikorkeuteen. Reunusta ei piirretä
 elementin päälle taiton laskemisen jälkeen, vaan reunuksen korkeus lisätään elementin
 korkeuteen. Elementti, jolla on reunus peruuttaa sen lapsielementtinä olevan elementin
 ylämarginaalin luhistumisen, joten reunuksia käyttäessä täytyy olla erityisen tarkkana,
 jos haluaa säilyttää rytmin kohdallaan kautta sivun.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gridloverissa reunukset otetaan huomioon vain </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">hr </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementillä, koska reunusten
-käsittelyyn ei ole mahdollista tehdä yleistä sääntöä. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">hr </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti tarkoittaa
+
+Gridloverissa reunukset otetaan huomioon vain `hr`-elementillä, koska reunusten
+käsittelyyn ei ole mahdollista tehdä yleistä sääntöä. `hr`-elementti tarkoittaa
 vaakaviivaa, sen oletustyyli on paksu reunus ja 1 em:n ylä- ja alamarginaalit.
-Elementille annetaan yhden pikselin reunus joka suuntaan määreellä </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">border: 1px
-solid;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">, sekä yhden pikselin negatiivinen marginaali ylä- sekä alapuolelle määreellä
-</span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">margin: -1px auto; </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Tällöin elementin korkeus on taiton kannalta nolla, vaikka
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page37image14832" alt="page37image14832" width="40.080000" height="0.240000">
-      <img src="file:///page37image14992" alt="page37image14992" width="53.280000" height="0.240000">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">37
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 38">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">visuaalisesti se tuottaa sivulle kahden pikselin vaakasuuntaisen viivan. </span><span style="font-size: 12.000000pt; font-family: 'CourierNewPSMT'">hr </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">-elementin
+Elementille annetaan yhden pikselin reunus joka suuntaan määreellä `border: 1px solid;`,
+sekä yhden pikselin negatiivinen marginaali ylä- sekä alapuolelle määreellä
+`margin: -1px auto;` Tällöin elementin korkeus on taiton kannalta nolla, vaikka
+visuaalisesti se tuottaa sivulle kahden pikselin vaakasuuntaisen viivan. `hr`-elementin
 reunustyyli on koodissa esimerkkinä, jotta reunusten ja välistysten suhde ei unohtuisi
 Gridloverin tuottamaa CSS-koodia käyttäessä.
-</span></p>
-        </div>
-      </div>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">38
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 39">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Pitkät numerot, kuten Laskenta -kappaleessa saatu 1.4210526316 em arvo rytmin
+
+Pitkät numerot, kuten Laskenta -kappaleessa saatu 1.4210526316 em arvo rytmin
 yksiköksi, ovat epäkäytännöllisiä tyylejä käsin tehdessä. Pitkiä desimaaleja on vaikea
 muistaa ja hitaampi käsitellä tekstieditorissa. Yleensä selaimet käsittelevät arvoja
 pikseleiden pyöristyksen suhteen vain muutaman desimaalin tarkkuudella, mutta
 selaimissa on tämän suhteen eroja, joten arvot kannattaa pitää aina mahdollisimman
 tarkkoina.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Vuoden 2012 lopulla Gridloverissa oli käytössä vain neljä desimaalia em-yksiköillä ja
+
+Vuoden 2012 lopulla Gridloverissa oli käytössä vain neljä desimaalia em-yksiköillä ja
 rytmi kohdistui pikselilleen kaikilla tuetuilla selaimilla. Vuodenvaihteen jälkeen Google
 Chrome päivitti em-laskentaa siten, että rytmin viivat eivät enää kohdistuneet
 pikselilleen tällä tarkkuudella. Tästä syystä CSS-paneelissa on nyt em-yksiköissä olevat
 luvut yhdeksän desimaalin tarkkuudella.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kehittyvät laitteet tuovat myös uusia vaatimuksia pikselitarkkuudelle. Gridloverin
+
+Kehittyvät laitteet tuovat myös uusia vaatimuksia pikselitarkkuudelle. Gridloverin
 syntyessä vuonna 2011 suurin osa kuluttajalaitteiden näytöistä oli pikselitiheydeltään
 samankaltaisia. Nykyään laitteita, näyttöjä ja tiheyksiä on niin paljon erilaisia, että
 pikselintarkkuutta on vaikea taata kaikilla laitteilla. Tulevaisuudessa toivon mukaan
 selaimet kehittyvät niin, että pikselilaskennasta voidaan luopua ja luottaa siihen, että
 selaimet laskevat taiton tarkasti ja skaalaavat sen ruudulle sopivaksi.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Toivon siis, että osa tämänkin tutkielman tuloksia olisi vanhentunutta tietoa
+
+Toivon siis, että osa tämänkin tutkielman tuloksia olisi vanhentunutta tietoa
 mahdollisimman nopeasti, jotta web-typografia olisi helpommin lähestyttävää ja
 universaalimpaa. Vuosisatoja kehittyneet typografiset periaatteet tuskin muuttuvat
 paljoa seuraavina vuosina, mutta teknologia ja sen mahdollisuudet varmasti antavat
 uusia ulottuvuuksia web-typografialle, kuten web-fonttien ja web-typografian suosioon
 nousu on jo näyttänyt.
-</span></p>
-        </div>
-      </div>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">39
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 40">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">8 Sanasto
-</span></p>
-        </div>
-      </div>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Monille tutkielmassa käytetyille sanoille ei ole virallista suomenkielistä vastinetta, joten
+
+## 8 Sanasto
+
+Monille tutkielmassa käytetyille sanoille ei ole virallista suomenkielistä vastinetta, joten
 käytän osittain vapaasti suomennettuja termejä. Vasemmalla on termi suomeksi,
 keskellä englanniksi, oikealla tarvittaessa tarkennus. Gridloverin käyttöliittymä on vain
 englanniksi, joten sanasto helpottaa myös käyttöliittymän ja tutkielman seuraamista
 samanaikaisesti. Englanninkieliset sanat toimivat myös parempina hakutermeinä
 lisätietoa etsiessä, suomenkielisillä vastineilla ei välttämättä ole helppo löytää
 lisämateriaalia luettavaksi.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Typografia
-</span></p>
-        </div>
-      </div>
-      <table><colgroup><col style="width: 29.458240%"><col style="width: 20.993228%"><col style="width: 49.548532%">
-        </colgroup><tbody><tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Selkeys
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Legibility
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <img src="file:///page40image8312" alt="page40image8312" width="0.960000" height="6.000000">
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Tarkoittaa kirjasintyypin yksittäisten kirjainten
+
+### Typografia
+
+<table>
+<tbody>
+<tr>
+<td>
+Selkeys
+</td>
+<td>
+Legibility
+</td>
+<td>
+Tarkoittaa kirjasintyypin yksittäisten kirjainten
 vaikutus luettavuuteen
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Luettavuus
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Readability
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Tarkoittaa kirjasintyypin, sekä koko sivun
+</td>
+</tr>
+<tr>
+<td>
+Luettavuus
+</td>
+<td>
+Readability
+</td>
+<td>
+Tarkoittaa kirjasintyypin, sekä koko sivun
 typografian vaikutusta siihen, kuinka helppo- ja
 nopealukuista teksti sivulla on.
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Typografinen järjestelmä
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Typographic
+</td>
+</tr>
+<tr>
+<td>
+Typografinen järjestelmä
+</td>
+<td>
+Typographic
 design system
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Kappale 2.1, määritellään tekstissä
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Jalkalinja
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Baseline
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Kirjaimen osa, joka yhdessä muiden rivin
+</td>
+<td>
+Kappale 2.1, määritellään tekstissä
+</td>
+</tr>
+<tr>
+<td>
+Jalkalinja
+</td>
+<td>
+Baseline
+</td>
+<td>
+Kirjaimen osa, joka yhdessä muiden rivin
 kirjainten kanssa muodostaa tekstirivin alalinjan,
 jota silmä seuraa.
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Kirjasintyyppi
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Typeface
-</span></p>
-              </div>
-            </div>
-            <img src="file:///page40image25136" alt="page40image25136" width="0.960000" height="0.960000">
-          </td>
-          <td>
-          </td>
-        </tr>
-      </tbody></table>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">HTML
-</span></p>
-        </div>
-      </div>
-      <table><colgroup><col style="width: 29.458240%"><col style="width: 70.541760%">
-        </colgroup><tbody><tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">HTML-elementti
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <img src="file:///page40image29440" alt="page40image29440" width="0.960000" height="6.000000">
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Viittaa HTML-kielen yleiseen käsitteeseen </span><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPS'; font-style: italic">elementti
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'CourierNewPSMT'">html </span><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">-elementti
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Viittaa HTML-elementtiin, jonka nimi on html
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Juurielementti
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Root element
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Isäntäelementti
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Parent element
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Lapsielementti
-</span></p>
-              </div>
-            </div>
-            <img src="file:///page40image40176" alt="page40image40176" width="0.960000" height="0.960000">
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Child element
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody></table>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">40
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 41">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">CSS
-</span></p>
-        </div>
-      </div>
-      <table><colgroup><col style="width: 29.558325%"><col style="width: 70.441675%">
-        </colgroup><tbody><tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Esittelylohko
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <img src="file:///page41image3184" alt="page41image3184" width="0.960000" height="6.000000">
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Declaration block
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">V alitsin
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Selector
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Määre
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Declaration
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Arvo
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">V alue
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Marginaali
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Margin
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Reunus
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Border
-</span></p>
-              </div>
-            </div>
-            <img src="file:///page41image17600" alt="page41image17600" width="0.960000" height="0.960000">
-          </td>
-        </tr>
-      </tbody></table>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Käyttöliittymä
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Laskenta
-</span></p>
-        </div>
-      </div>
-      <table><colgroup><col style="width: 29.508198%"><col style="width: 70.491802%">
-        </colgroup><tbody><tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Suora manipulaatio
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Direct manipulation
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody></table>
-      <table><colgroup><col style="width: 29.608622%"><col style="width: 70.391378%">
-        </colgroup><tbody><tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Pohjafonttikoko
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <img src="file:///page41image25800" alt="page41image25800" width="0.960000" height="6.000000">
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Base font size
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Perusrivikorkeus
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Base line height
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Rytmin yksikkö
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Rhythm unit
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Rivikorkeus
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Line height
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Skaala
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Scale
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Skaalasijainti
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Scale location
-</span></p>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Modulaarinen skaala
-</span></p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="layoutArea">
-              <div class="column">
-                <p><span style="font-size: 10.000000pt; font-family: 'TimesNewRomanPSMT'">Modular scale
-</span></p>
-              </div>
-            </div>
-            <img src="file:///page41image42960" alt="page41image42960" width="0.960000" height="0.960000">
-          </td>
-        </tr>
-      </tbody></table>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">41
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 42">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 14.000000pt; font-family: 'TimesNewRomanPS'; font-weight: 700">Lähteet
-</span></p>
-        </div>
-      </div>
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Thompson B., 1969. Homage to the Book. New York : Westvaco
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Bringhurst, R. 2012. Elements of Typographic Style. Seattle: Hartley &amp; Marks.
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Miller, J. 1999. Introduction to Typography. Hakupäivä 4.4.2014.
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://www.sjsu.edu/people/joe.miller/courses/dsgd99/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Kalbag, L. 2012. Design Systems. Hakupäivä 6.4.2014.
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://24ways.org/2012/design-systems/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Rutter, R. 2006. Compose to a Vertical Rhythm. Hakupäivä 7.4.2014
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://24ways.org/2006/compose-to-a-vertical-rhythm/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Brown, T. 2011. More Meaningful Typography. Hakupäivä 6.4.2014.
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://alistapart.com/article/more-meaningful-typography</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Bos B. Çelik T., Hickson I., Lie H. 2011. W3C CSS 2.1 Specification. Hakupäivä
-10.4.2014. &lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://www.w3.org/TR/CSS21/syndata.html#declaration</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Lie H. (Opera Software), Atkins T. (Google), Etemad E. (Mozilla), 2013. W3C CSS
-Values and Units Module Level 3. Hakupäivä 30.4.2014 &lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://www.w3.org/TR/css3-
-values/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Web Platform Docs. 2014. Web Platform Docs: HTML. Hakupäivä 10.4.2014.
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://docs.webplatform.org/wiki/guides/the_basics_of_html</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Web Platform Docs. 2014. Web Platform Docs: CSS. Hakupäivä 10.4.2014.
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://docs.webplatform.org/wiki/css</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Etemad E. 2011. W3C CSS Snapshot 2010. Hakupäivä 10.4.2014.
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://www.w3.org/TR/css-2010</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page42image9720" alt="page42image9720" width="262.320000" height="0.240000">
-      <img src="file:///page42image9880" alt="page42image9880" width="191.760000" height="0.240000">
-      <img src="file:///page42image10040" alt="page42image10040" width="262.320000" height="0.240000">
-      <img src="file:///page42image10200" alt="page42image10200" width="274.800000" height="0.240000">
-      <img src="file:///page42image10360" alt="page42image10360" width="270.960000" height="0.240000">
-      <img src="file:///page42image10520" alt="page42image10520" width="138.000000" height="0.240000">
-      <img src="file:///page42image10680" alt="page42image10680" width="34.080000" height="0.240000">
-      <img src="file:///page42image10840" alt="page42image10840" width="290.640000" height="0.240000">
-      <img src="file:///page42image11000" alt="page42image11000" width="176.640000" height="0.240000">
-      <img src="file:///page42image11160" alt="page42image11160" width="156.000000" height="0.240000">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">42
-</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="page" title="Page 43">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Gruber J. 2004. Markdown. Hakupäivä 12.4.2014.
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">https://daringfireball.net/projects/markdown/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;<br>
-Bynens M., Mari</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">ş </span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">C., Reinl H. C. HTML5 Boilerplate 2014. Hakupäivä 4.5.2014
-&lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://html5boilerplate.com</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Coyier C. The Lengths of CSS, 2013. Hakupäivä 30.4.2014 &lt;</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'; color: rgb(6.666667%, 33.333330%, 80.000000%)">http://css-tricks.com/the-
-lengths-of-css/</span><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">&gt;
-</span></p>
-          <p><span style="font-size: 12.000000pt; font-family: 'TimesNewRomanPSMT'">Harjukelo S. 2013. Visuaalisen ilmeen rakentaminen.<br>
+</td>
+</tr>
+<tr>
+<td>
+Kirjasintyyppi
+</td>
+<td>
+Typeface
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+
+### HTML
+
+<table>
+<tbody>
+<tr>
+<td>
+HTML-elementti
+</td>
+<td>
+Viittaa HTML-kielen yleiseen käsitteeseen _elementti_
+</td>
+</tr>
+<tr>
+<td>
+`html`-elementti
+</td>
+<td>
+Viittaa HTML-elementtiin, jonka nimi on html
+</td>
+</tr>
+<tr>
+<td>
+Juurielementti
+</td>
+<td>
+Root element
+</td>
+</tr>
+<tr>
+<td>
+Isäntäelementti
+</td>
+<td>
+Parent element
+</td>
+</tr>
+<tr>
+<td>
+Lapsielementti
+</td>
+<td>
+Child element
+</td>
+</tr>
+</tbody>
+</table>
+
+###CSS
+
+<table>
+<tbody>
+  <tr>
+<td>
+Esittelylohko
+</td>
+<td>
+Declaration block
+</td>
+</tr>
+<tr>
+<td>
+Valitsin
+</td>
+<td>
+Selector
+</td>
+</tr>
+<tr>
+<td>
+Määre
+</td>
+<td>
+Declaration
+</td>
+</tr>
+<tr>
+<td>
+Arvo
+</td>
+<td>
+Value
+</td>
+</tr>
+<tr>
+<td>
+Marginaali
+</td>
+<td>
+Margin
+</td>
+</tr>
+<tr>
+<td>
+Reunus
+</td>
+<td>
+Border
+</td>
+</tr>
+</tbody>
+</table>
+
+### Käyttöliittymä
+
+<table>
+<tbody>
+<tr>
+<td>
+Suora manipulaatio
+</td>
+<td>
+Direct manipulation
+</td>
+</tr>
+</tbody>
+</table>
+
+### Laskenta
+
+<table>
+<tbody>
+<tr>
+<td>
+Pohjafonttikoko
+</td>
+<td>
+Base font size
+</td>
+</tr>
+<tr>
+<td>
+Perusrivikorkeus
+</td>
+<td>
+Base line height
+</td>
+</tr>
+<tr>
+<td>
+Rytmin yksikkö
+</td>
+<td>
+Rhythm unit
+</td>
+</tr>
+<tr>
+<td>
+Rivikorkeus
+</td>
+<td>
+Line height
+</td>
+</tr>
+<tr>
+<td>
+Skaala
+</td>
+<td>
+Scale
+</td>
+</tr>
+<tr>
+<td>
+Skaalasijainti
+</td>
+<td>
+Scale location
+</td>
+</tr>
+<tr>
+<td>
+Modulaarinen skaala
+</td>
+<td>
+Modular scale
+</td>
+</tr>
+</tbody>
+</table>
+
+##Lähteet
+
+
+Thompson B., 1969. Homage to the Book. New York : Westvaco
+
+Bringhurst, R. 2012. Elements of Typographic Style. Seattle: Hartley & Marks.
+
+Miller, J. 1999. Introduction to Typography. Hakupäivä 4.4.2014.<br>
+http://www.sjsu.edu/people/joe.miller/courses/dsgd99/
+
+Kalbag, L. 2012. Design Systems. Hakupäivä 6.4.2014.<br>
+http://24ways.org/2012/design-systems/
+
+Rutter, R. 2006. Compose to a Vertical Rhythm. Hakupäivä 7.4.2014<br>
+http://24ways.org/2006/compose-to-a-vertical-rhythm/
+
+Brown, T. 2011. More Meaningful Typography. Hakupäivä 6.4.2014.<br>
+http://alistapart.com/article/more-meaningful-typography
+
+Bos B. Çelik T., Hickson I., Lie H. 2011. W3C CSS 2.1 Specification. Hakupäivä<br>
+10.4.2014. http://www.w3.org/TR/CSS21/syndata.html#declaration
+
+Lie H. (Opera Software), Atkins T. (Google), Etemad E. (Mozilla), 2013. W3C CSS<br>
+Values and Units Module Level 3. Hakupäivä 30.4.2014 http://www.w3.org/TR/css3-values/
+
+Web Platform Docs. 2014. Web Platform Docs: HTML. Hakupäivä 10.4.2014.<br>
+http://docs.webplatform.org/wiki/guides/the_basics_of_html
+
+Web Platform Docs. 2014. Web Platform Docs: CSS. Hakupäivä 10.4.2014.<br>
+http://docs.webplatform.org/wiki/css
+
+Etemad E. 2011. W3C CSS Snapshot 2010. Hakupäivä 10.4.2014.<br>
+http://www.w3.org/TR/css-2010
+
+Gruber J. 2004. Markdown. Hakupäivä 12.4.2014.<br>
+https://daringfireball.net/projects/markdown/
+
+Bynens M., Mariş C., Reinl H. C. HTML5 Boilerplate 2014. Hakupäivä 4.5.2014<br>
+http://html5boilerplate.com
+
+Coyier C. The Lengths of CSS, 2013. Hakupäivä 30.4.2014<br>
+http://css-tricks.com/the-lengths-of-css/
+
+Harjukelo S. 2013. Visuaalisen ilmeen rakentaminen.
+
 Maatta H. 2011. Visuaalisen ilmeen ja virallisen Facebook-sivun suunnittelu ja toteutus.
 Tarvainen M. 2011. Käyttäjäystävällinen blogikäyttöliittymä.
-</span></p>
-        </div>
-      </div>
-      <img src="file:///page43image3992" alt="page43image3992" width="215.520000" height="0.240000">
-      <img src="file:///page43image4152" alt="page43image4152" width="131.760000" height="0.240000">
-      <img src="file:///page43image4312" alt="page43image4312" width="119.760000" height="0.240000">
-      <img src="file:///page43image4472" alt="page43image4472" width="70.560000" height="0.240000">
-      <div class="layoutArea">
-        <div class="column">
-          <p><span style="font-size: 12.000000pt; font-family: 'OpenSans'">43&nbsp;</span></p>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
 
 </body>
 </html>
